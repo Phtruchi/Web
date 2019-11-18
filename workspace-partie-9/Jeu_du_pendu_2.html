@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>
+			Workspace 9 :  le jeu du pendu
+		</title>
+		<meta charset="utf-8"/>
+		<link rel=Stylesheet type="text/css" href=Style_jeu_du_pendu.css>
+		<script src="Script_jeu_du_pendu_4.js"></script>
+	</head>
+	
+	<body>
+		
+		<div id="page">
+			
+			<img name="pendu" class="pendu" src="image_pendu.jpg">
+			
+			<h1 id="titre_principal">
+				Workspace 9 : le jeu du pendu
+			</h1>
+			
+			<h2>
+				Choisis un niveau de difficulté :
+			</h2>
+			
+			<center>
+			<table id="niveau">
+				<tr>
+					<td onclick="difficulte(this);">Facile</td>
+					<td onclick="difficulte(this);">Normal</td>
+					<td onclick="difficulte(this);">Difficile</td>
+				</tr>
+			</table>
+			</center>
+			
+			<h2>
+				Cliquez sur une lettre ...
+			</h2>
+				
+			<center>	
+			<table id="clavier">
+				<tr>
+					<td onclick="touche(this);">A</td>
+					<td onclick="touche(this);">B</td>
+					<td onclick="touche(this);">C</td>
+					<td onclick="touche(this);">D</td>
+					<td onclick="touche(this);">E</td>
+					<td onclick="touche(this);">F</td>
+					<td onclick="touche(this);">G</td>
+					<td onclick="touche(this);">H</td>
+					<td onclick="touche(this);">I</td>
+				</tr>
+				<tr>
+					<td onclick="touche(this);">J</td>
+					<td onclick="touche(this);">K</td>
+					<td onclick="touche(this);">L</td>
+					<td onclick="touche(this);">M</td>
+					<td onclick="touche(this);">N</td>
+					<td onclick="touche(this);">O</td>
+					<td onclick="touche(this);">P</td>
+					<td onclick="touche(this);">Q</td>
+					<td onclick="touche(this);">R</td>
+				</tr>
+				<tr>
+					<td onclick="touche(this);">S</td>
+					<td onclick="touche(this);">T</td>
+					<td onclick="touche(this);">U</td>
+					<td onclick="touche(this);">V</td>
+					<td onclick="touche(this);">W</td>
+					<td onclick="touche(this);">X</td>
+					<td onclick="touche(this);">Y</td>
+					<td onclick="touche(this);">Z</td>
+				</tr>
+			</table>
+			</center>
+			
+			<h2>
+				... pour le mot ci-dessous :
+			</h2>
+			
+			<center>
+			<table id="tabAffiche">
+				<tr>
+					<script language="javascript">
+						for(var i=0; i<tailleMot; i++) document.write("<td> <p id=\""+i+"\">"+motDevine.charAt(i)+"</p></td>");
+					</script>
+				</tr>
+			</table>
+			</center>
+    
+			<script language="javascript">
+				for (var i=0; i<tailleMot; i++) tabMotDevine[i]=document.getElementById(i);
+			</script>
+			
+			<br>
+			
+			<p id=erreurs>
+				
+			</p>
+			
+			<center>
+				<a class="lien" href="javascript:location.reload();">Nouvelle partie</a>
+			</center>
+			
+		</div>
+		
+	</body>
+</html>

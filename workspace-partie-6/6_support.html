@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <link rel="stylesheet" href="../workspaces-css/style_supports.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1>Workspace 6 - Support</h1>
+        <h2>Manipuler des tableaux avec Javascript</h2>
+        <p>A chaque fois qu'un nouveau fichier est mentionné ou lié à un workspace, ouvrez le à l'aide de navigateur pour
+            pouvoir interagir avec la page et d'un éditeur de texte pour pouvoir le modifier</p>
+        <p>Astuce 1 : A chaque fois qu'un fichier HTML est mentionné, ouvrez le à l'aide d'un navigateur et
+            d'un éditeur de texte. Avec le navigateur,
+            vous allez pouvoir interagir avec la page. Avec l'éditeur, vous allez
+            modifier la page.</p>
+
+        <p> Astuce 2 : Dès qu'un nouveau fichier CSS ou Javascript est
+            mentionné, ouvrez le à l'aide d'un éditeur de texte, pour pouvoir le
+            modifier. Ouvrez dans un navigateur la page HTML à laquelle il est lié pour
+            voir son effet sur la page. </p>
+    </header>
+
+    <nav>
+        <a href=Js_can_change_the_table_content.html>Js_can_change_the_table_content.html</a>
+        <a href="Js_can_change_the_table_content.js">Js_can_change_the_table_content.js</a>
+        <a href="#T1">Tâche 1</a>
+        <a href="#T2">Tâche 2</a>
+        <a href="#T3">Tâche 3</a>
+        <a href="#T4">Tâche 4</a>
+        <a href="#T5">Tâche 5</a>
+        <a href="#T6">Tâche 6</a>
+        <a href="#TF1">Tâche F1</a>
+        <a href="#TF2">Tâche F2</a>
+        <a href="#TF3">Tâche F3</a>
+        <a href="../accueil.html" style="float:right">Accueil</a>
+    </nav>
+
+    <div class="row">
+        <section class="leftcolumn">
+            <article class="card">
+                <h2>Objectif globale</h2>
+                <h3>Utiliser les tableaux HTML5 avec javascript</h3>
+                <p>Vous allez essayer de vous amuser avec les tableaux et javascript.</p>
+                <p>En ce sens, vous allez devoir utilisez les fichiers :
+                    <ul>
+                        <li>
+                            <a href=Js_can_change_the_table_content.html>Js_can_change_the_table_content.html</a>
+
+                        </li>
+                        <li>
+                            <a href="Js_can_change_the_table_content.js">Js_can_change_the_table_content.js</a>
+                        </li>
+                    </ul>
+                </p>
+            </article>
+            <article class="card">
+                <h2 id="T1">Tâche 1</h2>
+                <h3>Interaction avec la page HTML</h3>
+                <p>Examinez la page HTML <a href=Js_can_change_the_table_content.html>Js_can_change_the_table_content.html</a>
+                    dans le navigateur.</p>
+                <h3>Question 1</h3>
+                <h5>Qu'affiche cette page?</h5>
+                <p class="answer"> Réponse</p>
+				<p class="answer"> Cette page affiche un titre dans le head, un titre <strong>h2</strong> et un bouton dont la fonction est de construire un tableau. Puis, elle affiche les headers <strong style = "color:red;">Nom</strong> et <strong style = "color:red;">Prénom</strong> d'un tabeau.
+				</br>
+				Enfin, cette page contient un footer qui possède un lien vers la page 6_support.html.
+				</p>
+                <h3>Question 2</h3>
+                <h5>Quelles sont les moyens pour l'utilisateur d'intéragir avec cette page?</h5>
+                <p class="answer"> Réponse</p>
+				<p class="answer"> Javascript et CSS sont les deux principaux moyens d'agir avec la page courante par l'intermédiaire du bouton (par exemple). Dans le cas qui nous concerne, c'est Javascript qui permettra à l'utilisateur d'interagir avec la page.</p>
+            </article>
+            <article class="card">
+                <h2 id="T2">Tâche 2</h2>
+                <h3>Examiner la page HTML <a href=Js_can_change_the_table_content.html>Js_can_change_the_table_content.html</a>
+                    à l'aide de votre éditeur</h3>
+                <p>Dans l'état actuel, si vous essayez de cliquer sur le bouton, rien ne se passe</p>
+                <h3>Question</h3>
+                <h5>Ouvrez la page à l'aide d'un éditeur de texte. Quelle est le problème?</h5>
+				<p class="answer"> Réponse</p>
+                <p class="answer"> Ni le bouton, ni aucun autre objet n'a d'effet visible sur la page. Si on regade le fichier Js_can_change_the_table_content.js, on remarque que la fonction addLineToHTMLTable n'est pas implémentée. C'est pour cette raison que le bouton n'a aucun effet.</p>
+            </article>
+            <article class="card">
+                <h2 id="T3">Tâche 3</h2>
+                <h3>Compléter du code javascript</h3>
+                <p>Complétez la fonction <code>addLineToHTMLTable()</code> du fichier
+                    <a href="Js_can_change_the_table_content.js">Js_can_change_the_table_content.js</a> pour ajouter
+                    une ligne avec deux cellules; une contenant le prénom et l'autre contenant le nom</p>
+                <h3>Indice</h3>
+                <p>Regardez les liens de la section "Pour vous aider..."</p>
+                <h3>Question</h3>
+                <h5>Après avoir complété cette fonction, essayez de cliquer de nouveau plusieurs fois sur le bouton.
+                Quelles sont les modifications apportées sur la page?</h5>
+				<p class="answer"> Réponse</p>
+                <div class="answer"> Après chaque clique sur le bouton 3 lignes sont ajoutées à la fin du tableau. Chaque groupe de 3 lignes ajoutées contient les trois mêmes données que le groupe précédent.</br>
+				C'est à dire, à chaque clique on ajoute (dans l'ordre):</br></br>
+				<ul style="color:firebrick;">
+				<li>"Alice", "Belle"</li>
+				<li>"Bob", "Gentil" </li>
+				<li>"Melchior", "Mechant"</li>
+				</ul>
+				</div>
+            </article>
+            <article class="card">
+                <h2 id="T4">Tâche 4</h2>
+                <h3>Apporter de nouvelles fonctionnalités </h3>
+                <p>Examinez la fonction <code>buildTable()</code> du fichier
+                    <a href="Js_can_change_the_table_content.js">Js_can_change_the_table_content.js</a></p>
+                <h3>Question</h3>
+                <h5>Que fait cette fonction?</h5>
+                <p class="answer"> Réponse</p>
+				<p class="answer"> La fonction <code>buildTable()</code> est appelée lors de la survenue d'un événement <em style="red;">onclick</em> sur le bouton considéré. </br>
+				Elle a pour action d'appeler la fonction <code>addLineToHTMLTable(fName, lName);</code> dont le rôle est d'afficher une nouvelle ligne.
+				</p>
+                <p>Modifier la page HTML et code javascript pour rajouter 2 inputs : prénom et nom</p>
+                <p>Lorsque l'utilisateur appuyera sur le bouton, c'est le prénom et le nom que l'utilisateur aura
+                indiqué dans les input qui seront insérées dans le tableau et non des valeurs en dures.</p>
+            </article>
+            <article class="card">
+                <h2 id="T5">Tâche 5</h2>
+                <h3>Apporter de nouvelles fonctionnalités </h3>
+                <p>Utilisez un formulaire pour demander :</p>
+                <ul>
+                    <li>le numéro de téléphone</li>
+                    <li>l'adresse email</li>
+                    <li>le mot de passe</li>
+                    <li>l'adresse de l'utilisateur</li>
+                </ul>
+
+                <p>Ne touchez pas au nom et prénom. Ils resteront dans les inputs à part.</p>
+                <p>
+                    Lorsque l'utilisateur appuyera sur le bouton :
+                    <ul>
+                        <li>les anciennes fonctionnalités se déclenchent</li>
+                        <li>un nouveau tableau se crée et affichent les nouvelles informations demandées dans le
+                        formulaire avec le nom et le prénom de l'utilisateur en plus</li>
+                    </ul>
+					<p class="answer"> Voir les résultats dans les fichiers HTML, JS et CSS.</p>
+                </p>
+                <p>Rajoutez du style CSS sur le formulaire (minimun 6) et sur les nouveaux tableaux (minimun 6).</p>
+            </article>
+            <article class="card">
+                <h2 id="T6">Tâche 6</h2>
+                <p>Rajoutez du style CSS sur le formulaire (minimun 6) et sur les nouveaux tableaux (minimun 6)
+                    qui sont générés.</p>
+					<p class="answer"> Voir les résultats dans les fichiers HTML, JS et CSS.</p>
+            </article>
+            <article class="card">
+                <h2 id="TFinale">Tâche finale</h2>
+                <h3>Qui a fait quoi?</h3>
+                <p> Dans la colonne de droite, 3 div de type card sont réservées pour chaque membre de l'équipe.
+                    Chacun doit indiquer ce qu'il a réalisé sur cette page HTML.</p>
+	
+            </article>
+        </section>
+        <aside class="rightcolumn">
+            <div class="card">
+                <h2>A propos de cette page Web</h2>
+                <p>Vous devez compléter cette page en remplissant les différentes sections avec le contenu adéquate</p>
+            </div>
+            <div class="card">
+                <h2>Pour vous aider...</h2>
+                <ul>
+                    <li><a href="https://www.w3schools.com/jsref/met_table_insertrow.asp" target="_blank">HTML DOM Table method</a></li>
+                    <li><a href="https://www.w3schools.com/jsref/dom_obj_table.asp" target="_blank">HTML DOM Table</a></li>
+                    <li><a href="../../aide/aide_memoire.html" target="_blank">Aide mémoire HTML</a></li>
+                    <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a></li>
+                    <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a></li>
+                    <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">Javascript</a></li>
+                </ul>
+            </div>
+            <div class="card">
+            <h3>Membre 1 - Thomas - Gire</h3>
+          <p class="answer"><span style="text-shadow: 3px 2px white;">Thomas Gire</span> est intervenu dans ce Workspace en tant que <span style="color:red;">relecteur</span>.</p>
+        </div>
+        <div class="card">
+          <h3>Membre 2 - Thomas - Waret</h3>
+          <p class="answer"><span style="text-shadow: 3px 2px white;">Thomas Waret </span> est intervenu dans ce Workspace en tant que <span style="color:red;">relecteur</span>.</p>
+        </div>
+        <div class="card">
+          <h3>Membre 3 - Philippe - Truchi</h3>
+          <p class="answer"><span style="text-shadow: 3px 2px white;">Philippe Truchi</span> est intervenu dans ce Workspace en tant que <span style="color:red;">rédacteur</span>.</p>
+
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="answer"> 
+	  <div style="text-decoration: underline;">
+	  Equipe
+	  </div>
+	  </br>
+	  Thomas Waret - waret.th@gmail.com </br> Thomas Gire - tgire@free.fr </br> Truchi Philippe - Philippe.Truchi@ac-nice.fr
+       </div>
+    </footer>
+</body>
+</html>

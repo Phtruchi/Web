@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Plotting functions in JavaScript using the
+        function plot library</title>
+    <meta charset="utf-8"/>
+    <style>
+        div {
+            float: left;
+        }
+        /*
+        #myFunction {
+            padding: 25px;
+            width: 250px;
+            height: 250px;
+        }
+        */
+    </style>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script>
+</head>
+<body>
+        <table>
+                <td>
+                        <tr>
+                                <div id="myFunction"></div>
+                        </tr>
+                </td>
+                <td>
+                        <tr>
+                                <div id="myFunction2"></div>
+                        </tr>
+                </td>
+                <td>
+                        <tr>
+                                <div id="myFunction3"></div>
+                        </tr>
+                </td>
+            </table>
+
+    <script>
+        var parameters = {
+            target: '#myFunction',
+            data: [{
+                fn: 'sin(x)',
+                color: 'red'
+            },{
+                fn: 'cos(x)',
+                color: 'green'
+            },{
+                fn: 'x^2',
+                color: 'blue'
+            }
+            ],
+            grid: true,
+            yAxis: {domain: [-1, 1]},
+            xAxis: {domain: [0, 2*Math.PI]}
+        };
+        
+        functionPlot(parameters);
+        
+    </script>
+
+
+
+<script>
+    var parameters = {
+        target: '#myFunction2',
+        data: [{
+            fn: 'log(x)',
+            color: 'blue'
+        }
+        ],
+        grid: true,
+        yAxis: {domain: [-1, 1]},
+        xAxis: {domain: [0, 2*Math.PI]}
+    };
+    
+    functionPlot(parameters);
+    
+</script>
+
+<script>
+    var parameters = {
+        target: '#myFunction3',
+        data: [{
+            fn: 'sin(1/x)',
+            color: 'green'
+        }
+        ],
+        grid: true,
+        yAxis: {domain: [-1, 1]},
+        xAxis: {domain: [0, 2*Math.PI]}
+    };
+    
+    functionPlot(parameters);
+    
+</script>
+
+<footer>
+    <a href="5_support.html">Retour au rapport du workspace 5</a>
+</footer>
+</body>
+</html>

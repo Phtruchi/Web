@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <link rel="stylesheet" href="../workspaces-css/style_supports.css">
+</head>
+<body>
+<header class="header">
+    <h1>Workspace 2 - Support</h1>
+    <h2>Un petit aperçu - Modifier le contenu d'une page HTML avec Javascript</h2>
+    <p>Astuce 1 : A chaque fois qu'un fichier HTML est mentionné, ouvrez le à l'aide d'un navigateur et
+        d'un éditeur de texte. Avec le navigateur,
+        vous allez pouvoir interagir avec la page. Avec l'éditeur, vous allez
+        modifier la page.</p>
+
+    <p> Astuce 2 : Dès qu'un nouveau fichier CSS ou Javascript est
+        mentionné, ouvrez le à l'aide d'un éditeur de texte, pour pouvoir le
+        modifier. Ouvrez dans un navigateur la page HTML à laquelle il est lié pour
+        voir son effet sur la page. </p>
+</header>
+
+<nav class="topnav">
+    <a href="2_button_modify_head_content_page.html">Fichier HTML</a>
+    <a href="2_button_modify_head_content_page.css" target="_blank">Fichier CSS</a>
+    <a href="#T1">Tâche 1</a>
+    <a href="#T2">Tâche 2</a>
+    <a href="#T3">Tâche 3</a>
+    <a href="#T4">Tâche 4</a>
+    <a href="#TF1">Tâche F1</a>
+    <a href="#TF2">Tâche F2</a>
+    <a href="#TF3">Tâche F3</a>
+    <a href="../accueil.html" style="float:right">Accueil</a>
+</nav>
+
+<div class="row">
+    <div class="leftcolumn">
+        <article class="card">
+            <h2>Objectifs globales</h2>
+            <p>Le but de ce workspace est double :
+            <ul>
+                <li>Utiliser Javascript pour modifier le contenu HTML d'une page Web</li>
+                <li>Comprendre les différentes façons d'intégrer du style CSS et comprendre les effets du style
+                sur une page HTML</li>
+            </ul>
+
+            </p>
+            <p>Pour répondre à ces deux objectifs, le workspace est divisé en deux parties : </p>
+            <ul>
+                <li>Modifier la structure HTML de la page
+                    <a href="2_button_modify_head_content_page.html">2_button_modify_head_content_page.html</a>
+                    avec Javascript
+                </li>
+                <li>Intégration et comprehension du style CSS appliqué sur la page 2_button_modify_head_content_page.html </li>
+            </ul>
+        </article>
+        <article class="card">
+            <h2>Première partie - Modifier la structure d'une page HTML existante à l'aide de Javascript</h2>
+            <p>Dans cette première partie du workspace vous allez travailler sur le fichier :
+                <a href="2_button_modify_head_content_page.html">2_button_modify_head_content_page.html</a></p>
+            <p>En ce sens, vous allez devoir modifier la structure HTML de la page
+                fournie dans ce workspace au fil des tâches à réaliser.</p>
+            <p>Cette première partie est complètement focus sur la partie Javascript.</p>
+            <p>Du coup, le fichier CSS
+                <a href="2_button_modify_head_content_page.css">2_button_modify_head_content_page.css</a>
+                n'est pas à modifier.</p>
+            <p>A la fin de cette partie, vous serez comment modifier du contenu HTML à l'aide d'un bouton et de Javascript</p>
+        </article>
+        <article class="card">
+            <h2 id="T1">Tâche 1</h2>
+            <h3>Analyser la page HTML</h3>
+            <p> Ouvrez, à l'aide d'un navigateur, la page <a href="2_button_modify_head_content_page.html">2_button_modify_head_content_page.html</a>
+            et analysez son contenu. </p>
+            <h3>Question 1</h3>
+            <h5>Que contient cette page Web? </h5>
+            <p class="answer"> Cette page web contient une page HTML composée d'un head et d'un body. Dans le head, il y a un script à modifier ainsi qu'un lien vers une feuille 
+			de style CSS. Dans le body, il y a un titre, un paragraphe, un bouton et un pied de page.</p>
+            <h3>Question 2</h3>
+            <h5>Décrivez en quelques mots le style cette page Web. </h5>
+            <p class="answer"> Le style de cette page web définie la couleur et les bordures du titre principale de la page (h1), elle définie aussi la police utilisée dans le 
+			titre et dans le paragraphe. La dernière partie du style donne la valeur des marges des différents élements de la page HTML.</p>
+            <p>Dans l'état actuel, si vous essayez de cliquer sur le bouton <code>Clique ici pour changer le titre de la
+                page</code>, rien ne se passe...</p>
+            <h3>Question 3</h3>
+            <h5>Analysez la page HTML à l'aide d'un éditeur de texte. Pourquoi ne se passe-t-il rien
+                lorsque vous cliquez sur ce bouton?</h5>
+            <p class="answer"> Dans le script de la page HTML il y a une fonction changeTitle(), mais elle ne contient que des commentaires, donc aucune instruction n'est effectuée. </p>
+        </article>
+        <article class="card">
+            <h2 id="T2">Tâche 2</h2>
+            <h3>Compléter du code Javascript </h3>
+            <p>Complétez la méthode <code>changeTitle() </code> de la page
+                <a href="2_button_modify_head_content_page.html">2_button_modify_head_content_page.html.</a></p>
+            <p>Cette méthode doit changer le titre de la balise h1 identifier par l'attribut <code>id="mainTitle"</code>
+                tel que décrit dans la documentation de la méthode.</p>
+            <h3>Question</h3>
+            <h5>Après avoir complété cette méthode et rafraîchit la page, expliquez à présent ce qu'il se passe lorsque
+                vous cliquez sur le bouton?</h5>
+            <p class="answer"> Lorsqu'on clique sur le bouton, la fonction changeTitle() est lancée et le titre change.</p>
+        </article>
+        <article class="card">
+            <h2 id="T3">Tâche 3</h2>
+            <h3>Externaliser du code Javascript </h3>
+            <h3>Question 1</h3>
+            <h5>Comment feriez-vous pour séparer le document HTML de son javascript?</h5>
+            <p class="answer"> Pour séparer le document HTML de son javascript nous allons créer un nouveau document 2_button_modify_head_content_page.js qui sera appelé dans le document HTML en 
+			utilisant "src =" à l'interieur de la balise "script".</p>
+            <p>Séparer le code Javascript du document HTML</p>
+            <h3>Question 2</h3>
+            <h5>Dans ce contexte, pensez-vous qu'il est préférable de mettre le code javascript
+                directement dans le contenu de la page HTML ou qu'il vaut mieux que les 2 soient séparés? Justifiez.</h5>
+            <p class="answer"> Dans ce contexte, je pense qu'il est préférable de mettre le code javascript
+                directement dans le contenu de la page HTML plutôt que les 2 soient séparés car il n'y a qu'une seule fonction.<br>
+				Dans le cas où il y a nécessité d'écrire plusieurs fonctions, il est surement préférable de séparer les deux
+				pour plus de lisibilité.</p>
+        </article>
+        <article class="card">
+            <h2 id="T4">Tâche 4</h2>
+            <h3>Ré-utiliser du code Javascript </h3>
+            <p>Créer un deuxième bouton nommé "clique ici pour rajouter un paragraphe" qui, lorsqu'un utilisateur
+            clique dessus, ajoute à la suite un nouveau paragraphe contenant un nombre aléatoire entre 1 et 100</p>
+            <p> Aide :
+               <a href="https://www.w3schools.com/js/js_random.asp"> https://www.w3schools.com/js/js_random.asp</a>
+            </p>
+        </article>
+        <article class="card">
+            <h2>Deuxième partie - rapide tour sur le style
+                <a target="_blank" href="2_button_modify_head_content_page.css">2_button_modify_head_content_page.css</a> de la page</h2>
+            <p>Dans cette deuxième partie du workspace vous allez travailler avec le fichier 2_button_modify_head_content_page.css</p>
+        </article>
+        <article class="card">
+            <h2 id="T5">Tâche 5</h2>
+            <h3>Lire du CSS</h3>
+            <h3>Question 1</h3>
+            <h5>Expliquez l'effet des propriétés CSS de la page sur h1 <a href="2_button_modify_head_content_page.html">2_button_modify_head_content_page.html</a>. </h5>
+            <iframe class="iframe" src="2_button_modify_head_content_page.css"></iframe>
+            <p class="answer"> Les différentes propriétés css de la page sur h1 sont : 
+			<ul>
+			<li> "color" définit la couleur du texte ;
+			<li> "background-color" définit l'interieur du cadre du titre ;
+			<li> "border" définit les propriétés de la bordure épaisseur, couleur... ;
+			<li> "padding" correspond à l'alinéa ;
+			<li> "border-radius" donne son arrondi à la bordure de la zone de titre ;
+			<li> "text-align" définit l'alignement du texte ;
+			<li> "font-family" définit le type de police d'écriture.
+			</ul>			
+			</p>
+            <h3>Question 2</h3>
+            <h5>Expliquez l'effet des propriétés CSS de la page sur la balise &lt;p&gt; </h5>
+            <p class="answer"> Les différentes propriétés css de la page sur la balise &lt;p&gt sont :
+			<ul>
+			<li> "font-family" définit le type de police d'écriture ;
+			<li> "margin-left" crée une marge à gauche.
+			</ul>
+			</p>
+            <h3>Question 3</h3>
+            <h5>Quelles balises HTML ont des propriétés CSS en communs? Justifiez.</h5>
+            <p class="answer"> Les balises HTML ayant des propriétes css en communs sont h1 et p ainsi que p, img et button.</p>
+            <h3>Question 4</h3>
+            <h5>Si vous deviez séparer les propriétes CSS communes, comment feriez-vous?</h5>
+            <p class="answer"> Les propriétés CSS me semblent déjà séparées ?</p>
+        </article>
+        <article class="card">
+            <h2 id="T6">Tâche 6</h2>
+            <h3>Intégration du CSS</h3>
+            <h3>Question 1</h3>
+            <h5>Expliquez comment le CSS a été séparé de la page Web <a href="2_button_modify_head_content_page.html">2_button_modify_head_content_page.html</a>. </h5>
+            <p class="answer"> Le css a été séparé de la page Web en créant un fichier 2_button_modify_head_content_page.css appelé dans le head de la page HTML à 
+			l'aide de la balise "link". </p>
+            <h3>Question 2</h3>
+            <h5>Comment feriez-vous pour intégrer le style CSS directement sur la page HTML?</h5>
+            <p class="answer"> Pour intégrer le style CSS directement sur la page HTML, on utilise la balise style type="text/css" inscrite à l'interieur du head. </p>
+            <p>Intégrer directement le style CSS dans le contenu de la page HTML</p>
+            <h3>Question 3</h3>
+            <h5>Dans ce contexte, pensez-vous qu'il est préférable de mettre le style CSS
+                directement dans le contenu de la page HTML ou qu'il vaut mieux que les 2 soient séparés? Justifiez.</h5>
+            <p class="answer"> Je pense qu'il vaut mieux que le CSS reste à part de la page HTML car cela rajoute beaucoup d'informations dans le head et il est plus difficile
+			de s'y retrouver. </p>
+        </article>
+        <article class="card">
+            <h2 id="TFinale">Tâche finale</h2>
+            <h3>Qui a fait quoi?</h3>
+            <p> Dans la colonne de droite, 3 div de type card sont réservées pour chaque membre de l'équipe.
+                Chacun doit indiquer ce qu'il a réalisé sur cette page HTML.</p>
+        </article>
+    </div>
+    <aside class="rightcolumn">
+        <div class="card">
+            <h2>A propos de cette page Web</h2>
+            <p>Vous devez compléter cette page en remplissant les différentes sections avec le contenu adéquate</p>
+        </div>
+        <div class="card">
+            <h2>Pour vous aider...</h2>
+            <ul>
+                <li>
+                    <a href="../aide/aide_memoire.html" target="_blank">Aide mémoire HTML</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/js/default.asp" target="_blank">Javascript</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Membre 1 - Thomas - Gire</h3>
+            <p class="answer"><span style="text-shadow: 3px 2px white;">Thomas Gire</span> est intervenu dans ce Workspace en tant que <span style="color:red;">relecteur</span>.</p>
+          </div>
+          <div class="card">
+            <h3>Membre 2 - Thomas - Waret</h3>
+            <p class="answer"><span style="text-shadow: 3px 2px white;">Thomas Waret </span> est intervenu dans ce Workspace en tant que <span style="color:red;">rédacteur</span>.</p>
+          </div>
+          <div class="card">
+            <h3>Membre 3 - Philippe - Truchi</h3>
+            <p class="answer"><span style="text-shadow: 3px 2px white;">Philippe Truchi</span> est intervenu dans ce Workspace en tant que <span style="color:red;">relecteur</span>.</p>
+          </div>
+    </aside>
+</div>
+
+<footer class="footer">
+    <h2>Contacter l'équipe</h2>
+    <div class="answer"> 
+    <div style="text-decoration: underline;">
+    Equipe
+    </div>
+    </br>
+    Thomas Waret - waret.th@gmail.com </br> Thomas Gire - tgire@free.fr </br> Truchi Philippe - Philippe.Truchi@ac-nice.fr
+     </div>
+  </footer>
+
+</body>
+</html>

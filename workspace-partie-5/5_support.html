@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <!--Librairie pour afficher du code avec un minimum de style-->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="../workspaces-css/style_supports.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Workspace 5 - Support</h1>
+        <h2>Utiliser des bibliothèques Javascript tierces - Etude de cas : bibliothèque Javascript de tracé de fonction</h2>
+        <p>Astuce 1 : A chaque fois qu'un fichier HTML est mentionné, ouvrez le à l'aide d'un navigateur et
+            d'un éditeur de texte. Avec le navigateur,
+            vous allez pouvoir interagir avec la page. Avec l'éditeur, vous allez
+            modifier la page.</p>
+
+        <p> Astuce 2 : Dès qu'un nouveau fichier CSS ou Javascript est
+            mentionné, ouvrez le à l'aide d'un éditeur de texte, pour pouvoir le
+            modifier. Ouvrez dans un navigateur la page HTML à laquelle il est lié pour
+            voir son effet sur la page. </p>
+    </header>
+
+    <nav>
+        <a href="5_plot_function_using_library.html">5_plot_function_using_library.html</a>
+        <a href="#T1">Tâche 1</a>
+        <a href="#T2">Tâche 2</a>
+        <a href="#T3">Tâche 3</a>
+        <a href="#T4">Tâche 4</a>
+        <a href="#T5">Tâche 5</a>
+        <a href="#TF1">Tâche F1</a>
+        <a href="#TF2">Tâche F2</a>
+        <a href="#TF3">Tâche F3</a>
+        <a href="../accueil.html" style="float:right">Accueil</a>
+    </nav>
+
+    <div class="row">
+        <section class="leftcolumn">
+            <article class="card">
+                <h2>Objectif global</h2>
+                <p>Dans ce workspace, vous allez essayer d'utiliser une bibliothèque Javascript tierce.
+                </p>
+                <p>En ce sens, nous avons sélectionné une bibliothèque pour tracer des fonctions mathématiques en Javascript.</p>
+                <p>Vous allez travailler avec le fichier
+                    <a href="5_plot_function_using_library.html">5_plot_function_using_library.html</a></p>
+            </article>
+            <article class="card">
+                <h2 id="T1">Tâche 1</h2>
+                <h3>Examiner les interactions utilisateur possibles sur la page
+                    <a href="5_plot_function_using_library.html">5_plot_function_using_library.html</a> à l'aide de votre
+                navigateur </h3>
+                <h3>Question</h3>
+                <h5>Quelles intéractions sont possibles avec le traceur de fonction?</h5>
+                <p class="answer"> Un déplacement de la souris à l'intérieur de la vue du graphe permet de déplacer un point aligné verticalement sur le graphe et dont les coordonnées sont affichées.
+                    Un clic maintenu et un déplacement de souris permettent de déplacer la fenêtre de visualisation du graphe de la fonction. L'utilisation de la molette permet un changement de zoom dans la vue.
+                </p>
+            </article>
+            <article class="card">
+                <h2 id="T2">Tâche 2</h2>
+                <h3>Lire du code</h3>
+                <p>Examinez le code de la page <a href="5_plot_function_using_library.html">5_plot_function_using_library.html</a></p>
+                <h3>Question 1</h3>
+                <h5>Dans quelle balise HTML le traceur de fonction est affiché?</h5>
+                <p class="answer">  Le traceur de fonction est affiché dans la balise div d'identifiant myFunction.</p>
+                <h3>Question 2</h3>
+                <h5>Quels sont les morceaux de code javascript qui permettent d'afficher le traceur de fonction?</h5>
+                <p class="answer"> Les morceaux de code qui permettent d'afficher le traceur de fonction sont les deux scripts d3.V3.min.js et function-plot.js ainsi que le code présent dans la balise script du div d'identifiant myFunction.
+                    les </p>
+                <h3>Question 3</h3>
+                <h5>Expliquez comment nous avons pu utiliser la fonction <code>functionPlot(parameters)</code>?</h5>
+                <p class="answer"> Nous avons pu utiliser la fonction functionPlot car elle est définie par le script function-plit.js qui a été chargé précédemment sur la page. Nous avons pu l'utiliser en l'appliquant à un objet qui a été stocké dans la variable parameters.</p>
+            </article>
+            <article class="card">
+                <h2 id="T3">Tâche 3</h2>
+                <h3>Utiliser une bibliothèque javascript - donner les bons paramètres</h3>
+                <p>Examinez plus particulièrement le code javascript suivant de la page</p>
+                <pre class="prettyprint">
+1. var parameters = {
+2.    target: '#myFunction',
+3.    data: [
+4.             {
+5.                fn: 'sin(x)',
+6.                color: 'red'
+7.             }
+8.          ],
+9.     grid: true,
+10.    yAxis: {domain: [-1, 1]},
+11.    xAxis: {domain: [0, 2*Math.PI]}
+12.    };
+13.
+14. functionPlot(parameters);
+                        </pre>
+                <h3>Question</h3>
+                <h5>Expliquez en détail l'initialisation de la variable <code>parameters</code></h5>
+                <p class="answer"> Parameters est une variable qui a été initialisée avec pour valeur un objet contenant 5 propriétés: target, data, grid,yAxis, xAxis. On devine sans même avoir à lire la documentation de la bibliothèque function-plot l'usage de ces paramètres qui sont explicites:
+                    target: L'élément HTML dans lequel le traceur va s'afficher.
+                    data: propriété fn est l'expression mathématique de variable x qui définit la fonction qui sera affichée.
+                    color est la couleur de la courbe tracée.
+                    grid: présence ou non de la grille paramétrée par un booleén. les propriétés axis qui définissent à l'aide d'un objet les intervalles de domaines de représentation de la fonction.
+                </p>
+            </article>
+            <article class="card">
+                <h2 id="T4">Tâche 4</h2>
+                <h3>Réutiliser du code existant</h3>
+                <p>Choisissez 2 fonctions à tracer et modifiez la variable <code>parameters</code> pour les tracer avec la fonction sinus</p>
+                <p>Choississez 2 couleurs différentes pour tracer chacunes d'elles.</p>
+            </article>
+            <article class="card">
+                <h2 id="T5">Tâche 5</h2>
+                <h3>Réutiliser du code existant</h3>
+                <p>Réutilisez le code javascript existant pour modifier le code de la page et rajouter 3 autres traceurs
+                    de fonction sur la page HTML</p>
+                <p>Chacun de ces traceurs doit tracer une fonction différente</p>
+                <p>Le but de cette tâche est de vous amusez au maximum avec cette librairie de traceur de graphe</p>
+            </article>
+            <article class="card">
+                <h2 id="TFinale">Tâche finale</h2>
+                <h3>Qui a fait quoi?</h3>
+                <p> Dans la colonne de droite, 3 div de type card sont réservées pour chaque membre de l'équipe.
+                    Chacun doit indiquer ce qu'il a réalisé sur cette page HTML.</p>
+            </article>
+        </section>
+        <aside class="rightcolumn">
+            <div class="card">
+                <h2>A propos de cette page Web</h2>
+                <p>Vous devez compléter cette page en remplissant les différentes sections avec le contenu adéquate</p>
+            </div>
+            <div class="card">
+                <h2>Pour vous aider...</h2>
+                <ul>
+                    <li>
+                        <a href="https://mauriciopoppe.github.io/function-plot/" target="_blank">Traceur de fonction</a>
+                    </li>
+                    <li>
+                        <a href="../../aide/aide_memoire.html" target="_blank">Aide mémoire HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 id="TF1">Membre 1 - Gire - Thomas</h3>
+                <p class="answer">J'ai réalisé intégralement ce workspace.</p>
+            </div>
+            <div class="card">
+                <h3 id="TF2">Membre 2 - Trucchi Philippe</h3>
+                <p class="answer">Relecture</p>
+            </div>
+            <div class="card">
+                <h3 id="TF3">Membre 3 - Thomas Waret</h3>
+                <p class="answer">Relecture</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+            <h2>Contacter l'équipe</h2>
+            <p class="answer">
+                Thomas Waret - waret.th@gmail.com </br> Thomas Gire - tgire@free.fr </br> Truchi Philippe - Philippe.Truchi@ac-nice.fr
+            </p>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <link rel="stylesheet" href="../workspaces-css/style_supports.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Workspace 8 - Support</h1>
+        <h2>Au choix : jouer avec les objets en javascript ou...?</h2>
+        <p>Astuce 1 : A chaque fois qu'un fichier HTML est mentionné, ouvrez le à l'aide d'un navigateur et
+            d'un éditeur de texte. Avec le navigateur,
+            vous allez pouvoir interagir avec la page. Avec l'éditeur, vous allez
+            modifier la page.</p>
+
+        <p> Astuce 2 : Dès qu'un nouveau fichier CSS ou Javascript est
+            mentionné, ouvrez le à l'aide d'un éditeur de texte, pour pouvoir le
+            modifier. Ouvrez dans un navigateur la page HTML à laquelle il est lié pour
+            voir son effet sur la page. </p>
+    </header>
+
+    <nav>
+        <a href="8_play_with_cars.html">8_play_with_cars.html</a>
+        <a href="8_play_with_objects.html">8_play_with_objects.html</a>
+        <a target="_blank" href="cars.js">cars.js</a>
+        <a target="_blank" href="dog.js">dog.js</a>
+        <a href="#T1">Tâche 1</a>
+        <a href="#T2">Tâche 2</a>
+        <a href="#T3">Tâche 3</a>
+        <a href="#T4">Tâche 4</a>
+        <a href="#T5">Tâche 5</a>
+        <a href="#T6">Tâche 6</a>
+        <a href="#TF1">TF 1</a>
+        <a href="#TF2">TF 2</a>
+        <a href="#TF3">TF 3</a>
+        <a href="../accueil.html" style="float:right">Accueil</a>
+    </nav>
+
+    <div class="row">
+        <section class="leftcolumn">
+            <article class="card">
+                <h2>Objectif global</h2>
+                <p>Plusieurs personnes ont soumis des idées pour le projet. Je vous propose donc, d'implémenter en HTML,
+                CSS, Javascript ce que vous aviez en tête. Toutefois, il faudra trouver le moyen d'utiliser
+                    toutes les notions vu dans ce workspace dans votre idée.</p>
+                <p>Pour ceux qui n'ont pas d'idée, je vous propose de vous amusez avec les objects en Javascript dans ce workspace. </p>
+            </article>
+            <article class="card">
+                <h2 id="T1">Tâche 1</h2>
+                <h3>Créez des objets simples</h3>
+                <p>En vous inspirant de l'objet <code>dog</code>, créez 3 autres objets :
+                </p>
+                <ul>
+                    <li>cat avec les propriétés et valeurs suivantes :
+                        <ul>
+                            <li>sound= Miaow</li>
+                            <li>name= Mittens</li>
+                        </ul>
+                    </li>
+                    <li>pig avec les propriétés et valeurs suivantes :
+                        <ul>
+                            <li>sound= Oink</li>
+                            <li>name= Charlie</li>
+                        </ul>
+                    </li>
+                    <li>horse avec les propriétés et valeurs suivantes :
+                        <ul>
+                            <li>sound= Neigh</li>
+                            <li>name= Marie</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Question</h3>
+                <h5>Comment feriez-vous pour qu'il partage tous les trois la méthode <code>speak()</code>?</h5>
+                <p class="answer"> Il me semble que les trois objets cat, pig et horse peuvent utiliser la méthode speak() car ils ont tous les trois les élements sound et name
+				qui sont utilisés dans speak().<br>
+                On ajoute alors un argument que nous appelons "animal" à l'interieur des parenthèses puis nous remplaçons les "this" par "animal" dans la dernière ligne.</p>
+                
+                <p class="answer"> Edit Thomas Gire: On peut aussi ajouter directement la méthodes speak aux trois animaux dog.speak = speak et laisser la référence à l'objet this.</p>
+                <p>Modifiez vos 3 objets ainsi que l'objet dog en conséquence.</p>
+            </article>
+            <article class="card">
+                <h2 id="T2">Tâche 2</h2>
+                <h3>Reutiliser du code</h3>
+                <p>Réutilisez la fonction <code>appendIn()</code> pour afficher sur la page HTML le résultat
+                de la méthode <code>speak()</code> sur les 3 objets que vous avez créé</p>
+            </article>
+            <article class="card">
+                <h2 id="T3">Tâche 3</h2>
+                <h3>Creation d'un constructeur Animal</h3>
+                <p>Définir un constructeur <code>Animal</code> pour créer des animaux avec les mêmes propriétés que le constructeur
+                    <code>Car</code> et avec les mêmes propriétés que l'objet <code>dog</code> </p>
+                <p>Rajouter une dernière propriété pour définir la race de l'animal</p>
+            </article>
+            <article class="card">
+                <h2 id="T4">Tâche 4</h2>
+                <h3>Apeler le constructeur Animal</h3>
+                <p>Utilisez le constructeur <code>Animal</code> pour créer trois animaux avec des valeurs aux choix :</p>
+                <ul>
+                    <li>Chien</li>
+                    <li>Chat</li>
+                    <li>Cheval</li>
+                </ul>
+                <p>Utilisez les images fournies pour représenter chacun d'eux sur la page HTML</p>
+            </article>
+            <article class="card">
+                <h2 id="T5">Tâche 5</h2>
+                <h3>Dessiner vos Animaux</h3>
+                <p>Inspirez vous des méthodes associées à <code>Car</code> pour dessiner sur la page vos trois animaux.</p>
+                <p>Chacun de vos animaux doit apparaître distinctement sur la page HTML.</p>
+            </article>
+            <article class="card">
+                <h2 id="T6">Tâche 6</h2>
+                <h3>Déplacer vos Animaux</h3>
+                <p>Inspirez vous des méthodes associées à <code>Car</code> pour déplacer sur la page vos trois animaux.</p>
+                <p>Déplacer vos trois animaux près des rebord de la page HTML.</p>
+                <p class="answer"> Edit Thomas Gire: On a choisi de faire apparaitre nos trois animaux initialement 
+                    aux trois bords de la fenêtre du navigateur, en utilisant les propriétés de la fenêtre  
+                    window.innerHeight et window.innerWidth.</p>
+                <p>Chacun de vos animaux doit apparaître distinctement sur la page HTML.</p>
+            </article>
+            <article class="card">
+                <h2 id="T7">Tâche 7</h2>
+                <h3>Challenge : Déplacer un de vos animaux avec les quatres flèches du clavier</h3>
+                <p>Ajoutez les évènements claviers correspondants aux flèches du clavier à votre Animal de type chat.</p>
+                <p>Exemple : Si c'est la flèche du bas qui est appuyée alors le chat se déplace vers le bas.
+                    Si c'est la flèche qui est appuyée de droite alors le chat se déplace vers la droite...</p>
+            </article>
+            <article class="card">
+                <h2 id="TFinale">Tâche finale</h2>
+                <h3>Qui a fait quoi?</h3>
+                <p> Dans la colonne de droite, 3 div de type card sont réservées pour chaque membre de l'équipe.
+                    Chacun doit indiquer ce qu'il a réalisé sur cette page HTML.</p>
+            </article>
+        </section>
+        <aside class="rightcolumn">
+            <div class="card">
+                <h2>A propos de cette page Web</h2>
+                <p>Vous devez compléter cette page en remplissant les différentes sections avec le contenu adéquate</p>
+            </div>
+            <div class="card">
+                <h2>Pour vous aider...</h2>
+                <ul>
+                    <li>
+                        <a href="../../aide/aide_memoire.html" target="_blank">Aide mémoire HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/js/default.asp" target="_blank">Javascript</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Membre 1 - WARET - Thomas</h3>
+                <p class="answer">J'ai fait l'ensemble des tâches de ce workspace, j'ai eu un peu de mal pour faire la dernière question mais je tenais 
+				vraiment à y arriver. <br> Je me suis servi au maximum des fonctions déjà écrites dans les tâches précédentes pour déplacer le chat à 
+				l'aide du pavé numérique. <br> Les images et le déplacement du chat apparaissent dans le fichier 8_play_with_cars.html. J'ai tappé le code Javascript à
+				la suite du fichier cars.js pour réutiliser le code appliqué aux images de voiture.</p>
+            </div>
+            <div class="card">
+                <h3>Membre 2 - TRUCHI - Philippe</h3>
+                <p class="answer">Relecture.</p>
+            </div>
+            <div class="card">
+                <h3>Membre 3 - GIRE - Thomas</h3>
+                <p class="answer">Relecture.</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <h2>Contacter l'équipe</h2>
+        <div class="answer"> 
+        <div style="text-decoration: underline;">
+        Equipe
+        </div>
+        </br>
+        Thomas Waret - waret.th@gmail.com </br> Thomas Gire - tgire@free.fr </br> Truchi Philippe - Philippe.Truchi@ac-nice.fr
+         </div>
+      </footer>
+</body>
+</html>

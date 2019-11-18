@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript and HTML</title>
+    <meta charset="utf-8"/>
+    <script>
+        /**
+         * Change le style l'élément h1 dont l'identifiant est mainTitle en y appliquer 6 transformations au niveau
+         * de la couleur du texte, de la couleur de l'arrière plan, de la bordure (couleur, largeur, epaisseur) du texte...
+         */
+        
+        // window.onload = changeTitleCSSStyle;
+
+        function changeTitleCSSStyle() {
+            
+            //Récupère l'élement h1 dont l'identifiant est mainTitle
+            mainTitleElement = document.getElementById('mainTitle');
+            
+            
+            //change la couleur de l'écriture
+            mainTitleElement.style.color = 'red';
+            
+            //change la couleur de l'arrière plan
+            mainTitleElement.style.backgroundColor = 'yellow';
+            //change la bordure
+            mainTitleElement.style.border = 'thick double #32a1ce';
+
+            // myButtonElement = document.getElementById('myOnlyButton')
+
+            styleButton = myFirstButton.style;
+
+            styleButton.color='pink';
+            styleButton.backgroundColor = 'green';
+            styleButton.border = '2px solid blue';
+            styleButton.fontSize = '32px';
+            styleButton.padding ='32px 16px';
+            styleButton.borderRadius = '50%';
+            styleButton.boxShadow= ' 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)';
+            styleButton.width = '70%';
+            styleButton.opacity = '0.6';
+        }
+
+        function changeParagraphStyle(){
+            MypStyle = document.body.getElementsByTagName('p')[0].style
+
+            MypStyle.fontFamily = 'ubuntu';
+            console.log('ok');
+            MypStyle.letterSpacing = '3px';
+            MypStyle.wordSpacing = '5px';
+            MypStyle.fontStyle = 'italic';    
+            MypStyle.fontWeight = 'bold'
+            MypStyle.textDecoration ='overline'
+            MypStyle.textShadow = '4px 4px 5px blue';
+            MypStyle.textAlign = 
+            'center';
+            MypStyle.textTransform = 'uppercase';
+
+            
+        }
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+}
+        function changeBackgroundColor(){
+            colors = {0:'red',1:'blue',2:'green',3:'yellow'}
+            document.body.style.backgroundColor = colors[getRandomInt(4)];
+            
+        }
+
+        
+    </script>
+</head>
+<body>
+<h1 id="mainTitle" style = 
+"
+color : red;
+background-color : yellow;
+border: thick double #32a1ce;
+" >Ma page d'accueil</h1>
+
+<p onmouseover="changeParagraphStyle();">Ceci est un exemple d'intéractivité entre Javascript et le contenu HTML d'un document</p>
+<button id=myFirstButton onclick="changeTitleCSSStyle();">Clique ici pour changer le style CSS du titre de la page</button>
+
+<button id=myRandomBehaviourButton onclick="changeBackgroundColor();">Clique ici pour changer l'arrière-plan</button>
+<footer>
+    <a href="3_support.html">Retour au rapport du workspace 3</a>
+</footer>
+</body>
+
+</html>

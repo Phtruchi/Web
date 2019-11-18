@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <link rel="stylesheet" href="../workspaces-css/style_supports.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Workspace 4 - Support</h1>
+        <h2>Debuguer du code Javascript</h2>
+        <p>Astuce 1 : A chaque fois qu'un fichier HTML est mentionné, ouvrez le à l'aide d'un navigateur et
+            d'un éditeur de texte. Avec le navigateur,
+            vous allez pouvoir interagir avec la page. Avec l'éditeur, vous allez
+            modifier la page.</p>
+
+        <p> Astuce 2 : Dès qu'un nouveau fichier CSS ou Javascript est
+            mentionné, ouvrez le à l'aide d'un éditeur de texte, pour pouvoir le
+            modifier. Ouvrez dans un navigateur la page HTML à laquelle il est lié pour
+            voir son effet sur la page. </p>
+    </header>
+
+    <nav>
+        <a href="4_code_to_debug.html">HTML CODE TO DEBUG</a>
+        <a href="#T1">Tâche 1</a>
+        <a href="#T2">Tâche 2</a>
+        <a href="#T3">Tâche 3</a>
+        <a href="#T4">Tâche 4</a>
+        <a href="#T5">Tâche 5</a>
+        <a href="#T6">Tâche 6</a>
+        <a href="#T7">Tâche 7</a>
+        <a href="#TF1">Tâche F1</a>
+        <a href="#TF2">Tâche F2</a>
+        <a href="#TF3">Tâche F3</a>
+        <a href="../accueil.html" style="float:right">Accueil</a>
+    </nav>
+
+    <div class="row">
+        <section class="leftcolumn">
+            <article class="card">
+                <h2 id="OBJ">Objectif Global</h2>
+                <p>L'objectif global dans ce workspace est d'apprendre à débuguer une page HTML et du code Javascript.</p>
+                <p>En ce sens, vous allez devoir travailler sur la structure HTML de
+                    la page <a href="4_code_to_debug.html">4_code_to_debug.html</a> qui est une page où le code
+                    Javascript ne fonctionne pas.</p>
+                <p>A la fin de ce workspace, vous aurez manipulé la console tool développeur de votre navigateur.</p>
+            </article>
+            <article class="card">
+                <h2 id="T1">Tâche 1</h2>
+                <h3>Examiner le rendu d'une page HTML <a href="4_code_to_debug.html">4_code_to_debug.html</a>
+                à l'aide de votre navigateur</h3>
+                <h3>Question</h3>
+                <h5>Qu'est-ce qu'il y a sur cette page?
+               </h5>
+                <p class="answer"> Il y a un bouton dont le clic est censé afficher la valeur d'une variable x inconnue et un lien pour retourner au workspace.</p>
+                <p>Dans l'état actuel, si vous cliquez sur le bouton <code>Clique ici pour afficher la valeur de la
+                    variable x </code>, rien ne se passe. </p>
+            </article>
+            <article class="card">
+                <h2 id="T2">Tâche 2</h2>
+                <h3>Apprendre à debuguer du code</h3>
+                <p>Modifiez le code de la page <a href="4_code_to_debug.html">4_code_to_debug.html</a> pour y rajouter
+                    un message dans la console devtool (CTRL+SHIFT+K sur Firefox) à l'aide de la méthode <code>console.log("...") </code>.
+                    Rajoutez ce message avant le code
+                    <code>document.body.innerHTML = "&lt;p&gt;La valeur de x = " + x + "&lt;/p&gt;";</code></p>
+                <h3>Question 1</h3>
+                <h5>Pourquoi place-t-on le message à afficher sur la console devtool avant ce code?</h5>
+                <p class="answer"> On place le message à afficher sur la console devtool avant ce code pour tester si le code de addXToThePage est bien executé lors du clic du bouton.</p>
+            </article>
+            <article class="card">
+                <h2 id="T3">Tâche 3</h2>
+                <h3>Examiner les messages de console devtool</h3>
+                <p>Après avoir rajouter la méthode <code>console.log("...") </code> au bon endroit dans le code de la page,
+                    rafraîchissez la page tout en gardant la console devtool ouverte et appuyez de nouveau le bouton <code>Clique ici pour afficher la valeur de la
+                        variable x </code>
+                <h3>Question</h3>
+                <h5>Qu'obtenez-vous sur la console devtool?</h5>
+                <p class="answer"> Le log ne se fait pas et une erreur ReferenceError est signalée. En effet, la variable javascript addXToToThePage n'existe pas, il y a une typo. Seule la référence addXToThePage existe. C'est la fonction qui a été définie dans notre script.</p>
+            </article>
+            <article class="card">
+                <h2 id="T4">Tâche 4</h2>
+                <h3>Examiner et corriger du code bugué</h3>
+                <p>Examinez attentivement le code de la page <a href="4_code_to_debug.html">4_code_to_debug.html</a>
+                    au niveau de la définition, la déclaration et
+                    l'appel de la fonction javascript de la page</p>
+                <h3>Question 1</h3>
+                <h5>Comment la fonction a été déclaré?</h5>
+                <p class="answer"> 
+                    Elle a été déclarée dans une balise scipt avec comme nom
+                    addXToThePage.
+                </p>
+                <h3>Question 2</h3>
+                <h5>Comment la fonction a été défini?</h5>
+                <p class="answer"> Elle est définie par une séquence de deux instructions une qui mute le contenu HTML du body et l'autre qui met bizarrement à jour la variable avec encore une typo sur un x. En revanche, la variable x n'étant pas déclarée dans le corps de la fonction, ce serait bien la variable x déclarée en dehors de la fonction (donc globalement) de valeur initialisée à 10 qui serait mise à jour.</p>
+                <h3>Question 3</h3>
+                <h5>Comment la fonction a été appelé?</h5>
+                <p class="answer"> Avec la typo précitée: addXToToThePage un To de trop.</p>
+            </article>
+            <article class="card">
+                <h2 id="T5">Tâche 5</h2>
+                <h3>Corriger du code bugué</h3>
+                <p>Corrigez l'erreur au niveau de cette fonction.</p>
+            </article>
+            <article class="card">
+                <h2 id="T6">Tâche 6</h2>
+                <h3>Deuxième correction</h3>
+                <p>Malgré la correction que vous venez d'apporter, il reste une deuxième erreur.</p>
+                <p>Examinez la valeur de la variable x lors de son initialisation à l'aide d'un éditeur de texte.</p>
+                <h3>Question 1</h3>
+                <h5>Quelle est la valeur de x à son initialisation?</h5>
+                <p class="answer"> x vaut 10 lors de son initialisation.</p>
+                <h3>Question 2</h3>
+                <h5>Comment la fonction devrait normalement modifier la variable x d'après la documentation?
+                </h5>
+                <p class="answer"> x = x +1</p>
+                <h3>Question 3</h3>
+                <h5>Pourtant, quelle est la valeur de x qui s'affiche lorque vous cliquez sur le bouton ?</h5>
+                <p class="answer"> La valeur est 10, ce qui est normal puisqu'elle est affichée avant d'être modifiée.</p>
+            </article>
+            <article class="card">
+                <h2 id="T7">Tâche 7</h2>
+                <h3>Corriger du code bugué</h3>
+                <p>Modifiez le code de la page pour qu'il n 'y ait plus d'erreur. Puis, rafraîchissez la page et
+                    amusez-vous plusieurs fois en appuyant sur le bouton pour afficher les valeurs de x</p>
+                <h3>Question</h3>
+                <h5>Quel est le comportement de la page après avoir corrigé les deux erreurs?</h5>
+                <p class="answer"> Si on ne corrige que les deux typos le bouton disparaît. Pour avoir le comportement qui semble désiré il faut concaténer le HTML de la balise body avec celui qu'il contient déjà.</p>
+            </article>
+            <article class="card">
+                <h2 id="TFinale">Tâche finale</h2>
+                <h3>Qui a fait quoi?</h3>
+                <p> Dans la colonne de droite, 3 div de type card sont réservées pour chaque membre de l'équipe.
+                    Chacun doit indiquer ce qu'il a réalisé sur cette page HTML.</p>
+            </article>
+        </section>
+        <aside class="rightcolumn">
+            <div class="card">
+                <h2>A propos de cette page Web</h2>
+                <p>Vous devez compléter cette page en remplissant les différentes sections avec le contenu adéquate</p>
+            </div>
+            <div class="card">
+                <h2>Pour vous aider...</h2>
+                <ul>
+                    <li>
+                        <a href="../../aide/aide_memoire.html" target="_blank">Aide mémoire HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/js/default.asp" target="_blank">Javascript</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                    <h3 id="TF1">Membre 1 - Gire - Thomas</h3>
+                    <p class="answer">J'ai réalisé ce workspace intégralement.</p>
+                </div>
+            <div class="card">
+                <h3 id="TF2">Membre 2 - Trucchi Philippe</h3>
+                <p class="answer">Relecture</p>
+            </div>
+            <div class="card">
+                <h3 id="TF3">Membre 3 - Thomas Waret</h3>
+                <p class="answer">Relecture</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <h2>Contacter l'équipe</h2>
+        <p class="answer">
+            Thomas Waret - waret.th@gmail.com </br> Thomas Gire - tgire@free.fr </br> Truchi Philippe - Philippe.Truchi@ac-nice.fr
+        </p>
+    </footer>
+</body>
+</html>

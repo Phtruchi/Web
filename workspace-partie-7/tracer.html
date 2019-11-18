@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <link rel="stylesheet" href="../workspaces-css/style_supports.css">
+	<link rel="stylesheet" href="myCSS.css">
+	<script src="myJS.js" type="text/javascript"></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script>
+
+</head>
+<body>
+
+<fieldset>
+<legend>Data</legend>
+<table id="tabId">
+	<tbody id="idBody">
+		<tr><td>Valeur min de x:</td><td>-10<input type="range" id="idminx" min="-10" max = "5" value = "-5" />5</td><td>Valeur max de x: </td><td>-5<input type="range" id="idmaxx" min = "-5" max = "10" value = "5" />10</td><td>Couleur de la fonction à dessiner:</td><td><input type="color" id="idcolorfonction"/></td></tr>
+		<tr><td>Valeur min de y:</td><td>-10<input type="range" id="idminy" min="-10" max = "5" value = "-5"/>5</td><td>Valeur max de y:</td><td>-5<input type="range" id="idmaxy"  min="-5" max = "10"value = "5"  />10</td><td>Fonction à dessiner:</td><td><input type="text" id="idfonction" value="x^2" /></td></tr>
+		<tr><td><button onclick="redraw();">&nbsp;&nbsp;&nbsp;&nbsp;ReDraw...&nbsp;&nbsp;&nbsp;&nbsp;</button></td><td><input type="hidden" id = "idHidden" /></td><td></td><td></td><td></td><td><button onclick="addPlot();">&nbsp;&nbsp;&nbsp;&nbsp;Add Plot&nbsp;&nbsp;&nbsp;&nbsp;</button></td></tr>
+	</tbody>
+</table>
+</fieldset>
+ </br> </br> </br>
+<div id ="root">
+<script>
+        let parameters = {
+            target: '#root',
+            data: [{fn: document.getElementById('idfonction').value, color: document.getElementById('idcolorfonction').value}],
+            grid: true,
+            yAxis: {domain: [document.getElementById('idminy').value, document.getElementById('idmaxy').value]},
+            xAxis: {domain: [document.getElementById('idminx').value, document.getElementById('idmaxy').value]}
+        };
+
+        functionPlot(parameters);
+    </script>
+</div>
+</body>
+</html>

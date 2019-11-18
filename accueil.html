@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <style>
+        /*Design a tree with CSS*/
+        .tree {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .tree ul {
+            padding-top: 20px; position: relative;
+
+            transition: all 0.5s;
+             -webkit-transition: all 0.5s;
+             -moz-transition: all 0.5s;
+        }
+
+        .tree li {
+            float: left; text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+
+            transition: all 0.5s;
+             -webkit-transition: all 0.5s;
+             -moz-transition: all 0.5s;
+        }
+
+        /*We will use ::before and ::after to draw the connectors*/
+
+        .tree li::before, .tree li::after{
+            content: '';
+            position: absolute; top: 0; right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%; height: 20px;
+        }
+        .tree li::after{
+            right: auto; left: 50%;
+            border-left: 1px solid #ccc;
+        }
+
+        /*We need to remove left-right connectors from elements without
+        any siblings*/
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+
+        /*Remove space from the top of single children*/
+        .tree li:only-child{ padding-top: 0;}
+
+        /*Remove left connector from first child and
+        right connector from last child*/
+        .tree li:first-child::before, .tree li:last-child::after{
+            border: 0 none;
+        }
+        /*Adding back the vertical connector to the last nodes*/
+        .tree li:last-child::before{
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+             -webkit-border-radius: 0 5px 0 0;
+             -moz-border-radius: 0 5px 0 0;
+        }
+        .tree li:first-child::after{
+            border-radius: 5px 0 0 0;
+             -webkit-border-radius: 5px 0 0 0;
+             -moz-border-radius: 5px 0 0 0;
+        }
+
+        /*Time to add downward connectors from parents*/
+        .tree ul ul::before{
+            content: '';
+            position: absolute; top: 0; left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0; height: 20px;
+        }
+
+        .tree li a{
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 11px;
+            display: inline-block;
+
+            border-radius: 5px;
+             -webkit-border-radius: 5px;
+             -moz-border-radius: 5px;
+
+            transition: all 0.5s;
+             -webkit-transition: all 0.5s;
+             -moz-transition: all 0.5s;
+        }
+
+        /*Time for some hover effects*/
+        /*We will apply the hover effect the the lineage of the element also*/
+        .tree li a:hover, .tree li a:hover+ul li a {
+            background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+        }
+        /*Connector styles on hover*/
+        .tree li a:hover+ul li::after,
+        .tree li a:hover+ul li::before,
+        .tree li a:hover+ul::before,
+        .tree li a:hover+ul ul::before{
+            border-color: #9212e9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Le travail à réaliser - Etude de cas : Création d'une page Web racine avec du style</h2>
+    <h3>(Conseil : à faire après avoir réalisé toutes les tâches des autres workspaces) </h3>
+    <h5>Objectifs : </h5>
+    <ul>
+        <li>Réaliser une page Web de A à Z</li>
+        <li>Apprendre à créer un menu de navigation</li>
+        <li>Jouer avec les balises HTML et le style CSS</li>
+        <li>Rajouter du contenu dynamique avec Javascript</li>
+    </ul>
+    <h5>Contexte</h5>
+    <p>
+        Un menu de navigation sert à créer des liens d'une page Web p1 vers plusieurs autres pages p2,p3....,pn.
+    </p>
+    <p>
+        Dans le contexte du projet, le but principal de cette partie est de créer une structure logique de navigation vers toutes
+        les pages Web du projet. <br>
+        Pour cela vous allez modifier cette page Web appelée accueil.html. Cette page serait la première page racine
+        qu'un utilisateur visiterait si elle et les autres pages constituant le site Web du projet étaient sur
+        Internet. <br>
+
+    </p>
+    <h5>En utilisant les balises HTML de votre choix et en vous inpirant de toutes les pages HTML du projet,
+        faites en sorte que cette page contienne :</h5>
+
+    <ol>
+        <li>un header contenant le titre du projet
+        </li>
+        <li>un menu de navigation qui redirige vers tous les supports HTML de chaque workspace :
+            <ul>
+                <li>support 1 (1_support.html)</li>
+                <li>support 2 (2_support.html)</li>
+                <li>support ...</li>
+            </ul>
+        </li>
+        <li> un body qui contient deux grandes sections :
+            <ul>
+                <li>une première section qui contient la copie de l'intégralité du body de la version initiale de cette page HTML</li>
+                <li>une autre section où chaque membre de l'équipe doit y créer son propre article.
+                    Chaque membre de l'équipe devra diviser son propre article en 5 parties :
+                    <ol>
+                        <li>pour indiquer son nom, prénom et adresse email</li>
+                        <li>pour indiquer les 9 styles CSS différents que vous allez appliquer à votre section</li>
+                        <li>pour indiquer les 4 styles que vous allez incorporer sur l'ensemble de cette page</li>
+                        <li>pour intégrer un contenu dynamique (différents des autres
+                            membres de l'équipe) en Javascript à appliquer sur votre section</li>
+                        <li>une dernière partie pour expliquer les difficultés rencontrées dans ce dernier travail à réaliser</li>
+                    </ol>
+                </li>
+            </ul>
+
+        </li>
+        <li>un Footer avec un tableau contenant:
+            <ul>
+                <li>Nom, prénom et email de chaque membre de l'équipe</li>
+            </ul>
+        </li>
+    </ol>
+    <h5>Ajouter du style CSS à votre page</h5>
+    <p>C'est le moment de vous amuser avec le CSS et les balises HTML.</p>
+    <p>
+        Chacun de vous devra au minimum intégrer 13 mises en forme CSS différentes dans cette page (dont 9 pour sa propre section).
+    </p>
+    <p>
+        Vous avez le droit d'utiliser également des exemples du <a target="_blank" href="https://www.w3schools.com/css/default.asp">w3schools</a> pour le CSS
+         ou d'utiliser des boîtes à outils comme
+        <a target="_blank" href="https://www.w3schools.com/w3css/default.asp">W3.CSS</a> ou
+        <a target="_blank" href="https://www.w3schools.com/bootstrap4/default.asp">Bootstrap 4</a> (très utilisée)
+    </p>
+    <h5>Aidez vous uniquement des exemples du site w3schools pour les balises HTML : <a target="_blank" href="https://www.w3schools.com/html/default.asp">w3school</a></h5>
+    <p>
+        La beauté, le design, l'harmonie des couleurs de la page n'est pas le critère ici... Si certain groupe essaie, ça peut devenir un bonus. <br>
+        Le but principal est que vous essayez de mettre en forme une page Web. <br>
+    </p>
+
+    <h5>Arborescence de navigation</h5>
+    <p>Voici l'arborescence que vous devriez obtenir à la fin du projet (Si vous voyez que l'arbre ne s'affiche pas correctement,
+        essayez de dé-zoomer la page):</p>
+    <!-- Family tree using only CSS(3) - The markup will be simple nested lists    -->
+    <div class="tree">
+        <ul>
+            <li>
+                <a href="./accueil.html">support</a>
+                <ul>
+                    <li>
+                        <a href="./workspace-partie-1/1_support.html">support 1</a>
+                    </li>
+                    <li>
+                        <a href="./workspace-partie-2/2_support.html">support 2</a>
+                    </li>
+                    <li>
+                        <a href="workspace-partie-3/3_support.html">support 3</a>
+                    </li>
+                    <li>
+                        <a href="workspace-partie-4/4_support.html">support 4</a>
+                    </li>
+                    <li><a href="workspace-partie-5/5_support.html">support 5</a></li>
+                    <li><a href="workspace-partie-6/6_support.html">support 6</a></li>
+                    <li><a href="workspace-partie-7/7_support.html">support 7</a></li>
+                    <li><a href="workspace-partie-8/8_support.html">support 8</a></li>
+                    <li><a href="workspace-partie-9/9_support.html">support 9</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

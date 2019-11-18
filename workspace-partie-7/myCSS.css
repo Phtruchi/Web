@@ -1,0 +1,26 @@
+/* ICC LES 9 STYLES DEMANDES DANS LA QUESTION */
+fieldset {
+	border:1px solid #999;
+	border-radius:8px;
+	box-shadow:0 0 10px #999;
+}
+
+legend {
+	color:firebrick;
+}
+
+td {
+	color: navy;
+	font-family:sans-serif;
+}
+
+button {
+	color:red;
+}
+
+div {
+	background-color: lightgrey;
+    border: 2px solid green;
+	width: 580px;
+    margin: 0 auto;
+}

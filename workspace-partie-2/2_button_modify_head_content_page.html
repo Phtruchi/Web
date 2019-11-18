@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>JavaScript et HTML</title>
+    <meta charset="utf-8"/>
+	<!-- <link rel="stylesheet" href="2_button_modify_head_content_page.css"> -->
+	<!-- CSS intégré directement à la page : -->
+	<style type="text/css">
+		h1 {
+			color:red;
+			background-color:lightGreen;
+			border:12px solid violet;
+			padding: 5px;
+			border-radius: 15px;
+			text-align: center;
+		}
+
+		p, h1 {
+			font-family: cursive
+		}
+
+		p, img, button {
+			margin-left:50px;
+		}
+	</style>
+    <script src = "2_button_modify_head_content_page.js">
+        /**
+         * Modifier titre h1 du document dont l'identifiant est "mainTitle" en concaténant le texte suivant :
+         * "<br>La modification du <u>titre</u> a été changé par Javascript!"
+         *
+         */
+        //function changeTitle() {
+            //Récupérez l'élement <h1> de la page à l'aide de l'API du DOM
+            //let h1_modif = document.getElementById("mainTitle") ;
+            //Modifier le contenu HTML de la balise <h1> en concatenant son contenu courant avec la string suivante : "<br>La modification du <u>titre</u> a été changé par Javascript!"
+            //h1_modif.innerHTML = "<br>La modification du <u>titre</u> a été changée par Javascript!" ;
+        //}
+    </script>
+</head>
+<body>
+<h1 id="mainTitle">Ma page Home</h1>
+
+<p>Ceci est un exemple d'interactivité entre Javascript et le contenu HTML du document</p>
+<button onclick="changeTitle();">Clique ici pour changer le titre de la page</button>
+
+<button onclick="ajoutParagraphe();">Clique ici pour ajouter un paragraphe</button>
+
+<footer id="piedPage">
+    <a href="2_support.html">Retour au rapport</a>
+</footer>
+</body>
+</html>

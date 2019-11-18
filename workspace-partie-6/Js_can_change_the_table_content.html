@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript peut changer le contenu d'un tableau à la voler</title>
+    <link rel="stylesheet" href="Js_can_change_the_table_content.css">
+</head>
+<body>
+<h2>Liste de contacts</h2>
+<fieldset>
+<legend>Saisir un contact...</legend>
+<p>
+Prénom: <input id="idFirstName" type = "text" \>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nom: <input id="idName" type = "text" \>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="buildTable();">Clique ici pour construire le tableau!</button>
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Téléphone: <input id="idTel" type = "tel" onkeypress="chiffres(event)"\>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: <input id="idEmail" type = "email" \>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password: <input id="idPwd" type = "password" \>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adresse: <input id="idAdr" type = "text" \>
+</fieldset>
+<table>
+    <thead>
+    <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+    </tr>
+    </thead>
+    <tbody id="tableContactBody">
+    </tbody>
+</table>
+
+<script src="Js_can_change_the_table_content.js"></script>
+<footer>
+    <a href="6_support.html">Retour au rapport du workspace 6</a>
+</footer>
+</body>
+</html>
+

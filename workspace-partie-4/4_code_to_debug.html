@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Ecrire un message dans la console devtool</title>
+    <meta charset="utf-8"/>
+    <script>
+        var x = 10;
+
+        /**
+         * Affiche la valeur de la variable x. Puis incrémente de 1 la valeur de la variable x
+         */
+        function addXToThePage() {
+            // This code is strangely never executed...
+            console.log('Avant la modification du body')
+            document.body.innerHTML += "<p>La valeur de x = " + x + "</p>";
+            x = x + 1;
+            console.log(x)
+        }
+    </script>
+</head>
+<body>
+<button onclick="addXToThePage();">Clique ici pour afficher la valeur de la variable x</button>
+<footer>
+    <a href="4_support.html">Retour au rapport du workspace 4</a>
+</footer>
+</body>
+</html>

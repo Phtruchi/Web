@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Javascript</title>
+    <link rel="stylesheet" href="../workspaces-css/style_supports.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Workspace 3 - Support</h1>
+        <h2>Un petit apperçu - Modifier le style CSS d'une page Web existante</h2>
+        <p>Astuce 1 : A chaque fois qu'un fichier HTML est mentionné, ouvrez le à l'aide d'un navigateur et
+            d'un éditeur de texte. Avec le navigateur,
+            vous allez pouvoir interagir avec la page. Avec l'éditeur, vous allez
+            modifier la page.</p>
+
+        <p> Astuce 2 : Dès qu'un nouveau fichier CSS ou Javascript est
+            mentionné, ouvrez le à l'aide d'un éditeur de texte, pour pouvoir le
+            modifier. Ouvrez dans un navigateur la page HTML à laquelle il est lié pour
+            voir son effet sur la page. </p>
+    </header>
+
+    <nav>
+        <a href="3_button_modify_css_head_page.html">3_button_modify_css_head_page.html</a>
+        <a href="#T1">Tâche 1</a>
+        <a href="#T2">Tâche 2</a>
+        <a href="#T3">Tâche 3</a>
+        <a href="#T4">Tâche 4</a>
+        <a href="#T5">Tâche 5</a>
+        <a href="#T6">Tâche 6</a>
+        <a href="#TF1">Tâche F1</a>
+        <a href="#TF2">Tâche F2</a>
+        <a href="#TF3">Tâche F3</a>
+        <a href="../accueil.html" style="float:right">Accueil</a>
+    </nav>
+
+    <div class="row">
+        <section class="leftcolumn">
+            <article class="card">
+                <h2>Première partie - Modifier le style d'une page HTML existante à l'aide de Javascript</h2>
+                <p>Dans cette première partie du workspace vous allez travailler sur partie javascript du fichier :
+                    <a href="3_button_modify_css_head_page.html">3_button_modify_css_head_page.html</a> </p>
+                <p>En ce sens, vous allez devoir modifier le style HTML de cette page
+                   au fil des tâches à réaliser.</p>
+                <p>Cette première partie est complètement focus sur la partie Javascript.</p>
+                <p>A la fin de cette partie, vous serez interagir avec un bouton pour modifier le style avec Javascript</p>
+            </article>
+            <article class="card">
+                <h2 id="T1">Tâche 1</h2>
+                <h3>Analyser la page HTML <a href="3_button_modify_css_head_page.html">3_button_modify_css_head_page.html</a></h3>
+                <h3>Question 1</h3>
+                <h5>Décrire en quelques mots le rendu et le contenu de cette page Web. </h5>
+                <p class="answer"> Il ne semble pas y avoir de rendus particuliers, les éléments s'affichent comme sur une page sans fichier css chargé. Contenu: un titre s'affiche dans l'onglet.On peut distinguer un h1, un paragraphe, un bouton et un lien. L'examen du fichier html confirme cela. Cependant, le lien se trouve en fait dans une balise footer.</p>
+                <p> Dans l'état actuel, si vous essayez de cliquer sur le bouton
+                    <code>Clique ici pour changer le style CSS du titre de la page</code>, rien ne se passe.</p>
+                <h3>Question 2</h3>
+                <h5>Examinez la page à l'aide d'un éditeur de texte et expliquez le problème.</h5>
+                <p class="answer"> L'attribut événement onclick du bouton indique à la page web de réagir à l'événement de clic sur le bouton en lançant l'exécution de la fonction javascript changeTitleCSSStyle qui pour le moment ne fait rien.</p>
+            </article>
+            <article class="card">
+                <h2 id="T2">Tâche 2</h2>
+                <h3>Compléter le code Javascript de la page
+                    <a href="3_button_modify_css_head_page.html">3_button_modify_css_head_page.html.</a></h3>
+                <p>Complétez la méthode <code>changeTitleCSSStyle() </code> de la page </p>
+                <p>Cette méthode doit changer le style du titre de la balise h1 identifier par l'attribut <code>id="mainTitle"</code>
+                    telle que décrit dans la documentation de la méthode.</p>
+            </article>
+            <article class="card">
+                <h2>Deuxième partie - Du style avec ou sans l'aide de Javascript</h2>
+                <p>Dans cette deuxième partie, le but est de différencier les manières de rajouter du style</p>
+            </article>
+            <article class="card">
+                <h2 id="T3">Tâche 3</h2>
+                <h3>Style CSS avec Javascript ou sans Javascript pour la page
+                    <a href="3_button_modify_css_head_page.html">3_button_modify_css_head_page.html</a>? </h3>
+                <h3>Question 1</h3>
+                <h5>Comment feriez-vous pour rajouter le même style CSS que vous avez codé dans la méthode <code>changeTitleCSSStyle() </code>
+                    avec Javascript mais cette fois-ci dès le chargement de la page, sans passer avec un bouton?</h5>
+                <p class="answer"> Dans la balise script précédente, on peut réaliser l'affectation suivante:
+                <code>
+                    window.onload = changeTitleCSSStyle;
+                </code>
+                         </p>
+                <h3>Question 2</h3>
+                <h5>Rajoutez le  même style CSS sans passer par Javascript. Expliquez les différences entre les deux
+                    méthodes.</h5>
+                <p class="answer"> 
+                    On peut ajouter directement un attribut style dans la balise h1:
+                    <code>style = 
+                        "
+                        color : red;
+                        background-color : yellow;
+                        border: thick double #32a1ce;
+                    </code>
+                    Dans ce nouveau cas, le style est interprété directement pendant la construction de la page web par le navigateur. Avec l'utilisation de l'affectation de window.onload le style est appliqué seulement après l'interprétation du reste de la page.
+                </p>
+                <p>Normalement, si vous avez rajouté le même style, plus rien ne devrait se passer lorsque vous cliquez
+                    sur le bouton car le style que vous essayez d'appliquer est exactement le même que celui de la page</p>
+            </article>
+            <article class="card">
+                <h2>Troisième partie - Appliquer du style à l'aide de Javascript</h2>
+                <p>Dans cette troisième partie, le but est de ré-utiliser du code javascript existant et de le modifier</p>
+            </article>
+            <article class="card">
+                <h2 id="T4">Tâche 4</h2>
+                <h3>S'inspirer du code Javascript existant de la page
+                    <a href="3_button_modify_css_head_page.html">3_button_modify_css_head_page.html</a></h3>
+                <p>Rajoutez au minimum une méthode Javascript qui modifie le style CSS du bouton
+                    <code>Clique ici pour changer le style CSS du titre de la page</code>.
+                    Ces méthodes doivent être appelées en même temps que la méthode <code>changeTitleCSSStyle() </code>
+                    lorsqu'on appuie sur ce même bouton.</p>
+                <p> Le nombre minimum de style que vous devez rajouter à ce bouton est 9. </p>
+            </article>
+            <article class="card">
+                <h2 id="T5">Tâche 5</h2>
+                <h3>S'inspirer du code Javascript existant la page
+                    <a href="3_button_modify_css_head_page.html">3_button_modify_css_head_page.html</a></h3>
+                <p>Choisissez au moins 9 style CSS qui se différencient de tous les autres précédents et rajoutez les
+                au paragraphe de la page  <code>Ceci est un exemple d'intéractivité entre Javascript et le contenu HTML
+                        d'un document</code> seulement lorsque l'utilisateur déplace le curseur de la souris sur lui.</p>
+            </article>
+            <article class="card">
+                <h2 id="T6">Tâche 6</h2>
+                <h3>Ré-utiliser du code Javascript</a></h3>
+                <p>A l'aide de javascript, changer de manière aléatoire (random) la couleur de l'arrière-plan dès qu'on appuie
+                sur le bouton "Clique ici pour changer l'arrière-plan"</p>
+            </article>
+            <article class="card">
+                <h2 id="TFinale">Tâche finale</h2>
+                <h3>Qui a fait quoi?</h3>
+                <p> Dans la colonne de droite, 3 div de type card sont réservées pour chaque membre de l'équipe.
+                    Chacun doit indiquer ce qu'il a réalisé sur cette page HTML.</p>
+            </article>
+        </section>
+        <aside class="rightcolumn">
+            <div class="card">
+                <h2>A propos de cette page Web</h2>
+                <p>Vous devez compléter cette page en remplissant les différentes sections avec le contenu adéquate</p>
+            </div>
+            <div class="card">
+                <h2>Pour vous aider...</h2>
+                <ul>
+                    <li>
+                        <a href="../aide/aide_memoire.html" target="_blank">Aide mémoire HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/js/default.asp" target="_blank">JS</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 id="TF1">Membre 1 - Gire - Thomas</h3>
+                <p class="answer">J'ai réalisé ce workspace intégralement.</p>
+            </div>
+            <div class="card">
+                <h3 id="TF2">Membre 2 - Trucchi Philippe</h3>
+                <p class="answer">Relecture</p>
+            </div>
+            <div class="card">
+                <h3 id="TF3">Membre 3 - Thomas Waret</h3>
+                <p class="answer">Relecture</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+            <h2>Contacter l'équipe</h2>
+            <p class="answer">
+                Thomas Waret - waret.th@gmail.com </br> Thomas Gire - tgire@free.fr </br> Truchi Philippe - Philippe.Truchi@ac-nice.fr
+            </p>
+    </footer>
+</body>
+</html>

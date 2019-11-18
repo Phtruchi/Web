@@ -1,0 +1,33 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-collapse: separate;
+    border-left: 0;
+    border-radius: 4px;
+    margin-top:20px;
+}
+
+tbody>tr:nth-child(odd)>td {
+    background-color: lightGrey;
+}
+
+tbody>tr>td {		
+	color:firebrick;			/* un premier CSS appliqué au formulaire */
+}
+
+fieldset {
+	border:1px solid #999;
+	border-radius:8px;
+	box-shadow:0 0 10px #999;
+}
+
+button {
+	border:1px solid blue;
+	border-radius:2px;
+	box-shadow:0 0 10px blue;
+}

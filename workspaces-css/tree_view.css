@@ -1,0 +1,39 @@
+/* Tree view only CSS */
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" ;
+
+/* feature */
+.tree input {
+    display: none;
+}
+.tree input ~  ul {
+    display: none;
+    border: none;
+}
+.tree input:checked ~ ul {
+    display: block;
+}
+.tree input ~ i.fa-angle-double-down {
+    display: none;
+}
+.tree input:checked ~ i.fa-angle-double-right {
+    display: none;
+
+}
+.tree input:checked ~ i.fa-angle-double-down {
+    display: inline;
+    border: none;
+}
+
+/* style */
+.tree li {
+    display: block;
+    font-family: 'Arial' , sans-serif;
+    font-size: 15px;
+    padding: 0.2em;
+    border: 1px solid transparent;
+}
+.tree li:hover {
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: lightgrey;
+}
