@@ -1,0 +1,47 @@
+.tg #zone {
+    height: 200px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: powderblue;
+}
+
+.tg div button {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    background-color: green;
+    font-size:0.5em
+}  
+
+.tg table {
+    margin:10px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.tg td,.tg th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+.tg tr:nth-child(even) {
+    background-color: #da7d76;
+}
+
+.tg #lz,#rz,#tz,#bz{
+    text-align: center;
+}
+
+article {
+    border: 3px solid green;
+    margin:10px;
+    font-size:1.3em;
+}
+
+article h2 {
+    text-decoration: underline;
+}
