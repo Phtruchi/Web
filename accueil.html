@@ -1,220 +1,510 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Projet Javascript</title>
-    <style>
-        /*Design a tree with CSS*/
-        .tree {
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+<title>Diu Javascript</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        .tree ul {
-            padding-top: 20px; position: relative;
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-            transition: all 0.5s;
-             -webkit-transition: all 0.5s;
-             -moz-transition: all 0.5s;
-        }
+<script src="tg.js"></script>
+<link href="tg.css" rel="stylesheet">
 
-        .tree li {
-            float: left; text-align: center;
-            list-style-type: none;
-            position: relative;
-            padding: 20px 5px 0 5px;
-
-            transition: all 0.5s;
-             -webkit-transition: all 0.5s;
-             -moz-transition: all 0.5s;
-        }
-
-        /*We will use ::before and ::after to draw the connectors*/
-
-        .tree li::before, .tree li::after{
-            content: '';
-            position: absolute; top: 0; right: 50%;
-            border-top: 1px solid #ccc;
-            width: 50%; height: 20px;
-        }
-        .tree li::after{
-            right: auto; left: 50%;
-            border-left: 1px solid #ccc;
-        }
-
-        /*We need to remove left-right connectors from elements without
-        any siblings*/
-        .tree li:only-child::after, .tree li:only-child::before {
-            display: none;
-        }
-
-        /*Remove space from the top of single children*/
-        .tree li:only-child{ padding-top: 0;}
-
-        /*Remove left connector from first child and
-        right connector from last child*/
-        .tree li:first-child::before, .tree li:last-child::after{
-            border: 0 none;
-        }
-        /*Adding back the vertical connector to the last nodes*/
-        .tree li:last-child::before{
-            border-right: 1px solid #ccc;
-            border-radius: 0 5px 0 0;
-             -webkit-border-radius: 0 5px 0 0;
-             -moz-border-radius: 0 5px 0 0;
-        }
-        .tree li:first-child::after{
-            border-radius: 5px 0 0 0;
-             -webkit-border-radius: 5px 0 0 0;
-             -moz-border-radius: 5px 0 0 0;
-        }
-
-        /*Time to add downward connectors from parents*/
-        .tree ul ul::before{
-            content: '';
-            position: absolute; top: 0; left: 50%;
-            border-left: 1px solid #ccc;
-            width: 0; height: 20px;
-        }
-
-        .tree li a{
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            text-decoration: none;
-            color: #666;
-            font-family: arial, verdana, tahoma;
-            font-size: 11px;
-            display: inline-block;
-
-            border-radius: 5px;
-             -webkit-border-radius: 5px;
-             -moz-border-radius: 5px;
-
-            transition: all 0.5s;
-             -webkit-transition: all 0.5s;
-             -moz-transition: all 0.5s;
-        }
-
-        /*Time for some hover effects*/
-        /*We will apply the hover effect the the lineage of the element also*/
-        .tree li a:hover, .tree li a:hover+ul li a {
-            background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
-        }
-        /*Connector styles on hover*/
-        .tree li a:hover+ul li::after,
-        .tree li a:hover+ul li::before,
-        .tree li a:hover+ul::before,
-        .tree li a:hover+ul ul::before{
-            border-color: #9212e9;
-        }
-    </style>
 </head>
-<body>
-    <h2>Le travail à réaliser - Etude de cas : Création d'une page Web racine avec du style</h2>
-    <h3>(Conseil : à faire après avoir réalisé toutes les tâches des autres workspaces) </h3>
-    <h5>Objectifs : </h5>
-    <ul>
-        <li>Réaliser une page Web de A à Z</li>
-        <li>Apprendre à créer un menu de navigation</li>
-        <li>Jouer avec les balises HTML et le style CSS</li>
-        <li>Rajouter du contenu dynamique avec Javascript</li>
-    </ul>
-    <h5>Contexte</h5>
-    <p>
-        Un menu de navigation sert à créer des liens d'une page Web p1 vers plusieurs autres pages p2,p3....,pn.
-    </p>
-    <p>
-        Dans le contexte du projet, le but principal de cette partie est de créer une structure logique de navigation vers toutes
-        les pages Web du projet. <br>
-        Pour cela vous allez modifier cette page Web appelée accueil.html. Cette page serait la première page racine
-        qu'un utilisateur visiterait si elle et les autres pages constituant le site Web du projet étaient sur
-        Internet. <br>
 
-    </p>
-    <h5>En utilisant les balises HTML de votre choix et en vous inpirant de toutes les pages HTML du projet,
-        faites en sorte que cette page contienne :</h5>
+<body onload=load()>
+<header>
+    <h1>Projet Html-Css-Javascript Groupe 1</h1>
+</header>
 
-    <ol>
-        <li>un header contenant le titre du projet
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Workspaces</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./workspace-partie-1/1_support.html">support 1 <span class="sr-only">(current)</span></a>
         </li>
-        <li>un menu de navigation qui redirige vers tous les supports HTML de chaque workspace :
-            <ul>
-                <li>support 1 (1_support.html)</li>
-                <li>support 2 (2_support.html)</li>
-                <li>support ...</li>
-            </ul>
+        <li class="nav-item active">
+          <a class="nav-link" href="./workspace-partie-2/2_support.html">support 2 <span class="sr-only">(current)</span></a>
         </li>
-        <li> un body qui contient deux grandes sections :
-            <ul>
-                <li>une première section qui contient la copie de l'intégralité du body de la version initiale de cette page HTML</li>
-                <li>une autre section où chaque membre de l'équipe doit y créer son propre article.
-                    Chaque membre de l'équipe devra diviser son propre article en 5 parties :
-                    <ol>
-                        <li>pour indiquer son nom, prénom et adresse email</li>
-                        <li>pour indiquer les 9 styles CSS différents que vous allez appliquer à votre section</li>
-                        <li>pour indiquer les 4 styles que vous allez incorporer sur l'ensemble de cette page</li>
-                        <li>pour intégrer un contenu dynamique (différents des autres
-                            membres de l'équipe) en Javascript à appliquer sur votre section</li>
-                        <li>une dernière partie pour expliquer les difficultés rencontrées dans ce dernier travail à réaliser</li>
-                    </ol>
-                </li>
-            </ul>
+        <li class="nav-item active">
+          <a class="nav-link" href="workspace-partie-3/3_support.html">support 3 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="workspace-partie-4/4_support.html">support 4 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="workspace-partie-5/5_support.html">support 5 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="workspace-partie-6/6_support.html">support 6 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="workspace-partie-7/7_support.html">support 7 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="workspace-partie-8/8_support.html">support 8 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="workspace-partie-9/9_support.html">support 9 <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      </div>
+  </nav>
 
-        </li>
-        <li>un Footer avec un tableau contenant:
-            <ul>
-                <li>Nom, prénom et email de chaque membre de l'équipe</li>
-            </ul>
-        </li>
-    </ol>
-    <h5>Ajouter du style CSS à votre page</h5>
-    <p>C'est le moment de vous amuser avec le CSS et les balises HTML.</p>
-    <p>
-        Chacun de vous devra au minimum intégrer 13 mises en forme CSS différentes dans cette page (dont 9 pour sa propre section).
-    </p>
-    <p>
-        Vous avez le droit d'utiliser également des exemples du <a target="_blank" href="https://www.w3schools.com/css/default.asp">w3schools</a> pour le CSS
-         ou d'utiliser des boîtes à outils comme
-        <a target="_blank" href="https://www.w3schools.com/w3css/default.asp">W3.CSS</a> ou
-        <a target="_blank" href="https://www.w3schools.com/bootstrap4/default.asp">Bootstrap 4</a> (très utilisée)
-    </p>
-    <h5>Aidez vous uniquement des exemples du site w3schools pour les balises HTML : <a target="_blank" href="https://www.w3schools.com/html/default.asp">w3school</a></h5>
-    <p>
-        La beauté, le design, l'harmonie des couleurs de la page n'est pas le critère ici... Si certain groupe essaie, ça peut devenir un bonus. <br>
-        Le but principal est que vous essayez de mettre en forme une page Web. <br>
-    </p>
-
-    <h5>Arborescence de navigation</h5>
-    <p>Voici l'arborescence que vous devriez obtenir à la fin du projet (Si vous voyez que l'arbre ne s'affiche pas correctement,
-        essayez de dé-zoomer la page):</p>
-    <!-- Family tree using only CSS(3) - The markup will be simple nested lists    -->
-    <div class="tree">
+<section>
+    <h1> Body initial</h1>
+        <h2>Le travail à réaliser - Etude de cas : Création d'une page Web racine avec du style</h2>
+        <h3>(Conseil : à faire après avoir réalisé toutes les tâches des autres workspaces) </h3>
+        <h5>Objectifs : </h5>
         <ul>
-            <li>
-                <a href="./accueil.html">support</a>
+            <li>Réaliser une page Web de A à Z</li>
+            <li>Apprendre à créer un menu de navigation</li>
+            <li>Jouer avec les balises HTML et le style CSS</li>
+            <li>Rajouter du contenu dynamique avec Javascript</li>
+        </ul>
+        <h5>Contexte</h5>
+        <p>
+            Un menu de navigation sert à créer des liens d'une page Web p1 vers plusieurs autres pages p2,p3....,pn.
+        </p>
+        <p>
+            Dans le contexte du projet, le but principal de cette partie est de créer une structure logique de navigation vers toutes
+            les pages Web du projet. <br>
+            Pour cela vous allez modifier cette page Web appelée accueil.html. Cette page serait la première page racine
+            qu'un utilisateur visiterait si elle et les autres pages constituant le site Web du projet étaient sur
+            Internet. <br>
+    
+        </p>
+        <h5>En utilisant les balises HTML de votre choix et en vous inpirant de toutes les pages HTML du projet,
+            faites en sorte que cette page contienne :</h5>
+    
+        <ol>
+            <li>un header contenant le titre du projet
+            </li>
+            <li>un menu de navigation qui redirige vers tous les supports HTML de chaque workspace :
                 <ul>
-                    <li>
-                        <a href="./workspace-partie-1/1_support.html">support 1</a>
-                    </li>
-                    <li>
-                        <a href="./workspace-partie-2/2_support.html">support 2</a>
-                    </li>
-                    <li>
-                        <a href="workspace-partie-3/3_support.html">support 3</a>
-                    </li>
-                    <li>
-                        <a href="workspace-partie-4/4_support.html">support 4</a>
-                    </li>
-                    <li><a href="workspace-partie-5/5_support.html">support 5</a></li>
-                    <li><a href="workspace-partie-6/6_support.html">support 6</a></li>
-                    <li><a href="workspace-partie-7/7_support.html">support 7</a></li>
-                    <li><a href="workspace-partie-8/8_support.html">support 8</a></li>
-                    <li><a href="workspace-partie-9/9_support.html">support 9</a></li>
+                    <li>support 1 (1_support.html)</li>
+                    <li>support 2 (2_support.html)</li>
+                    <li>support ...</li>
                 </ul>
             </li>
-        </ul>
-    </div>
+            <li> un body qui contient deux grandes sections :
+                <ul>
+                    <li>une première section qui contient la copie de l'intégralité du body de la version initiale de cette page HTML</li>
+                    <li>une autre section où chaque membre de l'équipe doit y créer son propre article.
+                        Chaque membre de l'équipe devra diviser son propre article en 5 parties :
+                        <ol>
+                            <li>pour indiquer son nom, prénom et adresse email</li>
+                            <li>pour indiquer les 9 styles CSS différents que vous allez appliquer à votre section</li>
+                            <li>pour indiquer les 4 styles que vous allez incorporer sur l'ensemble de cette page</li>
+                            <li>pour intégrer un contenu dynamique (différents des autres
+                                membres de l'équipe) en Javascript à appliquer sur votre section</li>
+                            <li>une dernière partie pour expliquer les difficultés rencontrées dans ce dernier travail à réaliser</li>
+                        </ol>
+                    </li>
+                </ul>
+    
+            </li>
+            <li>un Footer avec un tableau contenant:
+                <ul>
+                    <li>Nom, prénom et email de chaque membre de l'équipe</li>
+                </ul>
+            </li>
+        </ol>
+        <h5>Ajouter du style CSS à votre page</h5>
+        <p>C'est le moment de vous amuser avec le CSS et les balises HTML.</p>
+        <p>
+            Chacun de vous devra au minimum intégrer 13 mises en forme CSS différentes dans cette page (dont 9 pour sa propre section).
+        </p>
+        <p>
+            Vous avez le droit d'utiliser également des exemples du <a target="_blank" href="https://www.w3schools.com/css/default.asp">w3schools</a> pour le CSS
+             ou d'utiliser des boîtes à outils comme
+            <a target="_blank" href="https://www.w3schools.com/w3css/default.asp">W3.CSS</a> ou
+            <a target="_blank" href="https://www.w3schools.com/bootstrap4/default.asp">Bootstrap 4</a> (très utilisée)
+        </p>
+        <h5>Aidez vous uniquement des exemples du site w3schools pour les balises HTML : <a target="_blank" href="https://www.w3schools.com/html/default.asp">w3school</a></h5>
+        <p>
+            La beauté, le design, l'harmonie des couleurs de la page n'est pas le critère ici... Si certain groupe essaie, ça peut devenir un bonus. <br>
+            Le but principal est que vous essayez de mettre en forme une page Web. <br>
+        </p>
+    
+        <h5>Arborescence de navigation</h5>
+        <p>Voici l'arborescence que vous devriez obtenir à la fin du projet (Si vous voyez que l'arbre ne s'affiche pas correctement,
+            essayez de dé-zoomer la page):</p>
+        <!-- Family tree using only CSS(3) - The markup will be simple nested lists    -->
+        <div class="tree">
+            <ul>
+                <li>
+                    <a href="./accueil.html">support</a>
+                    <ul>
+                        <li>
+                            <a href="./workspace-partie-1/1_support.html">support 1</a>
+                        </li>
+                        <li>
+                            <a href="./workspace-partie-2/2_support.html">support 2</a>
+                        </li>
+                        <li>
+                            <a href="workspace-partie-3/3_support.html">support 3</a>
+                        </li>
+                        <li>
+                            <a href="workspace-partie-4/4_support.html">support 4</a>
+                        </li>
+                        <li><a href="workspace-partie-5/5_support.html">support 5</a></li>
+                        <li><a href="workspace-partie-6/6_support.html">support 6</a></li>
+                        <li><a href="workspace-partie-7/7_support.html">support 7</a></li>
+                        <li><a href="workspace-partie-8/8_support.html">support 8</a></li>
+                        <li><a href="workspace-partie-9/9_support.html">support 9</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    
+
+</section>
+
+<section>
+  <!--   <style>
+        .tg #zone {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+        }
+
+        .tg div button {
+            height: 50px;
+            width: 50px;
+            position: relative;
+            background-color: green;
+        }  
+
+        .tg #coord{
+            background-color: rgb(246, 245, 245);
+        }
+        .tg table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        .tg td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        .tg tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .tg #lz,#rz,#tz,#bz{
+            text-align: center;
+        }
+    </style> -->
+    
+    <article class="tg">
+        
+        <ol>
+            <li>
+                <h2>Thomas Gire tgire@free.fr.</h2>
+            </li>
+            <li>
+                Les 9 styles appliqués à ma section:
+                <ul>
+                    <li>Appliqués aux tableaux de ma section:</br>
+                        .tg table {</br>
+                            margin:10px; Marges autour du tableau</br>
+                            font-family: arial, sans-serif; Police de caractères utilisée</br>
+                            border-collapse: collapse; Les cellules adjacentes partagent leurs bordures</br>
+                            width: 50%; Le tableau occupe la moitié de la largeur</br>
+                        }
+                    </li>
+                    <li>
+                         Appliqués aux lignes des tableaux de ma section:</br>
+                        .tg table td,.tg table th {</br>
+                            border: 1px solid black; Le contour des cellules est dessiné en trait plein noir.</br>
+                            text-align: left; Le texte dans les cellules est aligné sur la gauche </br>
+                            padding: 8px; Ecarts de remplissage de 8 pixels sur les quatre côtés</br>
+                        }
+                    </li>
+                    <li>
+                        .tg tr:nth-child(even) { Pseudo classe permettant de cibler les lignes paires d'u tableau </br>
+                            background-color: #da7d76; Couleur de fond utilisée pour ces cases. </br>
+                        }
+                                    
+                    </li>
+                    
+                    <li>
+                        .tg #lz,#rz,#tz,#bz{ Selection par identifiant des cases du tableaux pour les zones au voisinage du bouton </br>
+                            text-align: center; Le texte est centré pour ces cellules 
+                        }
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                Les 4 styles à appliquer à la page entière:</br>
+                <ul>
+                    <li>
+                        article { S'applique à tous les articles de la page </br>
+                    border: 3px solid green; Définit un contour vert d'épaisseur 
+                    trois pixels au contour de l'article. </br> 
+                    margin:10px; Marge extérieure </br>
+                    font-size:1.3em; Taille pour la police du corps de texte des articles. </li>br>
+                }                            
+                    </li>
+                    <li>
+                        article h2 {</br>
+                            text-decoration: underline; Les titres h2 contenus dans les articles 
+                            sont soulignés </br>
+                        }
+                    </li>
+                    <li>
+                        Les styles dynamiques appliqués par le framework Bootstrap
+                        sur le nav de la page.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                
+                Contenu dynamique javascript:
+
+                Un bouton fuyant. Le bouton s'échappe quand on s'approche de lui jusqu'à être bloqué par un bord
+                de la boîte qui le contient.
+
+                <div id="zone">
+                    <button id="fuyard"> Click-me</button>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>inLeftZone</th>
+                            <th>inRightZone</th>
+                            <th>inTopZone</th>
+                            <th>inBottomZone</th>
+                        </tr>
+                        <tr>
+                            <td id="lz">false</td>
+                            <td id="rz">false</td>
+                            <td id="tz">false</td>
+                            <td id="bz">false</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th>x</th>
+                            <th>y</th>
+                            <th>xmin</th>
+                            <th>ymin</th>
+                            <th>xmax</th>
+                            <th>ymax</th>
+                        </tr>
+                        <tr>
+                            <td id="xmouse">x</td>
+                            <td id="ymouse">y</td>
+                            <td id="butxmin">xmin</td>
+                            <td id="butymin">ymin</td>
+                            <td id="butxmax">xmax</td>
+                            <td id="butymax">ymax</td>
+                        </tr>
+                    </table>
+                    <div id="coord">
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                Difficultés rencontrées:
+                <ul>
+                    <li>
+                        Gérer la correspondance entre placement relatif
+                        du bouton et coordonnées pour la souris.
+                    </li>
+
+                    <li>
+                        Gérer l'arret du déplacement du bouton lors du contact avec le bord.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </article>
+
+    <!-- <script>
+
+        mouse ={}
+        mouse.computeCoord=function(mousemoveEvent){
+            mouse.x = mousemoveEvent.clientX;
+            mouse.y = mousemoveEvent.clientY;
+        }
+        mouse.displayCoord=function(){
+            let [x,y] = [mouse.x,mouse.y];
+            xmouse.textContent = x;
+            ymouse.textContent = y;
+        }
+
+        fuyard.computeCoord=function(){
+            fuyard.xmin = fuyard.getBoundingClientRect().x
+            fuyard.ymin = fuyard.getBoundingClientRect().y
+            fuyard.width = fuyard.getBoundingClientRect().width
+            fuyard.height = fuyard.getBoundingClientRect().height
+            fuyard.xmax = fuyard.width+fuyard.xmin
+            fuyard.ymax = fuyard.height+fuyard.ymin         
+        }
+
+        fuyard.center = function(){
+            let {width:w,height:h}=zone.getBoundingClientRect()
+            fuyard.computeCoord()
+            let {width,height}=fuyard; 
+            fuyard.style.left = (w-width)/2+"px"
+            fuyard.style.top = (h-height)/2+"px"
+        }
+        fuyard.center()
+
+        fuyard.displayCoord=function(){
+            
+            let [xmin,ymin,xmax,ymax]=[fuyard.xmin,fuyard.ymin,fuyard.xmax,fuyard.ymax]; 
+            
+            butxmin.textContent = xmin;
+            butymin.textContent = ymin;
+            butxmax.textContent = xmax;
+            butymax.textContent = ymax;
+
+        }
+
+        function displayCoord(mouse){
+            let x,y,xmin,ymin,xmax,ymax;
+            [x,y] = [mouse.x,mouse.y];
+            [xmin,ymin,xmax,ymax]=[fuyard.xmin,fuyard.ymin,fuyard.xmax,fuyard.ymax]; 
+            xmouse.textContent = x;
+            ymouse.textContent = y;
+            butxmin.textContent = xmin;
+            butymin.textContent = ymin;
+            butxmax.textContent = xmax;
+            butymax.textContent = ymax;
+        }
+
+        fuyard.inzone={}
+        fuyard.inzone.left = function(){
+            
+            let [x,y] = [mouse.x,mouse.y];
+            let [xmin,ymin,xmax,ymax]=[fuyard.xmin,fuyard.ymin,fuyard.xmax,fuyard.ymax]; 
+            return(x > xmin-10 && x < xmin && y>ymin && y<ymax)
+        }
+
+        fuyard.inzone.right = function(){
+            let [x,y] = [mouse.x,mouse.y];
+            let [xmin,ymin,xmax,ymax]=[fuyard.xmin,fuyard.ymin,fuyard.xmax,fuyard.ymax]; 
+            return(x < xmax+10 && x > xmax && y>ymin && y<ymax)
+        }
+
+        fuyard.inzone.top = function(){
+            let [x,y] = [mouse.x,mouse.y];
+            let [xmin,ymin,xmax,ymax]=[fuyard.xmin,fuyard.ymin,fuyard.xmax,fuyard.ymax];
+            return(y > ymin-10 && y < ymin && x>xmin && x<xmax)
+        }
+
+        fuyard.inzone.bottom = function(){
+            let [x,y] = [mouse.x,mouse.y];
+            let [xmin,ymin,xmax,ymax]=[fuyard.xmin,fuyard.ymin,fuyard.xmax,fuyard.ymax];
+            return(y < ymax+10 && y > ymax && x>xmin && x<xmax)
+        }
+
+        function displayZones(){
+            lz.textContent = fuyard.inzone.left()
+            rz.textContent = fuyard.inzone.right();
+            tz.textContent = fuyard.inzone.top();
+            bz.textContent = fuyard.inzone.bottom();
+        }
+
+        // var rect = fuyard.getBoundingClientRect();
+        // console.log(rect.top, rect.right, rect.bottom, rect.left);
+
+        function onmousemove(mousemoveEvent){
+            
+            fuyard.computeCoord()
+            fuyard.displayCoord()
+            mouse.computeCoord(mousemoveEvent)
+            mouse.displayCoord()
+            displayZones()
+
+        }
+
+        fuyard.move = function(){
+
+        }
+
+
+        
+
+        
+          
+
+        zone.onmousemove = onmousemove
+
+    </script> -->
+    <article>
+        <h2>Thomas Waret - waret.th@gmail.com</h2>
+        <ol>
+            <li>
+                Les 9 styles à appliquer à ma section:
+            </li>
+            <li>
+                Les 4 styles à appliquer à la page entière:
+            </li>
+            <li>
+                Contenu dynamique javascript:   
+            </li>
+        </ol>
+    </article>
+    <article>
+        <h2>Philippe Truchi - Philippe.Truchi@ac-nice.fr</h2>
+        <ol>
+            <li>
+                Les 9 styles à appliquer à ma section:
+            </li>
+            <li>
+                Les 4 styles à appliquer à la page entière:
+            </li>
+            <li>
+                Contenu dynamique javascript:
+            </li>
+        </ol>
+    </article>
+</section>
+
+<footer>
+    <table >
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th> 
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td>Waret</td>
+          <td>Thomas</td>
+          <td>waret.th@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Truchi</td>
+          <td>Philippe</td>
+          <td>Philippe.Truchi@ac-nice.fr</td>
+        </tr>
+        <tr>
+          <td>Gire</td>
+          <td>Thomas</td>
+          <td>tgire@free.fr</td>
+        </tr>
+      </table>
+      
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
-</html>
+</html> 
