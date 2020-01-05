@@ -10,6 +10,10 @@
 
 <script src="tg.js"></script>
 <link href="tg.css" rel="stylesheet">
+<link href="pht.css" rel="stylesheet">
+<style>
+canvas { background-image: linear-gradient(aliceblue, darkblue); display: block; margin: 0 auto; border: 2px outset gold;}
+</style>
 
 </head>
 
@@ -461,18 +465,168 @@
         </ol>
     </article>
     <article>
-        <h2>Philippe Truchi - Philippe.Truchi@ac-nice.fr</h2>
+        <h2 class="redh2">Philippe Truchi - Philippe.Truchi@ac-nice.fr ou phtruchi@yahoo.fr</h2>
         <ol>
             <li>
                 Les 9 styles à appliquer à ma section:
+                <ul>
+                    <li> 
+					Style 1: Mon titre h2 en rouge
+					</li>
+					<li id ="lipointil">
+                    Style 2: Bordure pointillés dans ce li
+					</li>
+					<li class="flyingmouse">
+                    Style 3: Change la couleur du fond si survole souris.
+					</li>
+					<li class="myblueli">
+                    Style 4: couleur du texte bleu.
+					</li>
+					<li class="roundcorner">
+                    Style 5: Bordure bord arrondi.
+					</li>
+					<li class="lifl">
+                    Style 6: Premiere lettre paragraphe grande majuscule.<br />
+					Le reste ne change pas.
+					</li>
+					<li>
+                    Style 7 et 8: 
+					<div class="defil">
+						<div>Défilement du texte! C'est fou!</div>		<!-- Je ne peux pas m'empêcher d'avoir une pensée pour le défunt conteneur html "marquee" qui n'a pas survécu à l'arrivée de HTML5 -->
+					</div>
+					<p style="color: lime;">Mais il ya aussi un "padding" et "marging"! La classe internationale!</p>
+					</li>
+					<li>
+                    Style 9: 
+						<p>
+						<a href="#">Infobulle: Si on clique dessus c'est le bonheur assuré!<span>Oh que c'est chouette!</span></a>
+						</p>
+					</li>
+                 </ul>
             </li>
             <li>
                 Les 4 styles à appliquer à la page entière:
+				<ul>
+				<li>
+				Mon premier style appliqué à la page complète est dégradé gris vers blanc.
+				</li>
+				<li>
+				Maintenant je vais mettre le pied de page en texte firebrick sur fond #cce1e6
+				</li>
+				<li>
+				Now I want to set all buttons of this page with text in italic blue bords extrudés et ombre.<br />
+				<button onclick="alert('You click on my button button');">My button</button>
+				</li>
+				<li>
+				Rotation des &lt;li&gt;
+				</li>
+				</ul>
             </li>
             <li>
-                Contenu dynamique javascript:
+                Contenu dynamique javascript:<br />
+				cf calculette ci-dessous
             </li>
+			<li>
+				Difficultés rencontrées: Aucune. Je suis ingénieur en ingénierie des systèmes informatiques et j'ai plus de 10 ans d'expérience
+				professionnel comme ingénieur développement et administrateur système. Donc je ne comprends pas l'intérêt de me faire passer ce 
+				DIU, une équivalence aurait suffit! Ces précisions sont là pour justifier pourquoi je n'ai pas éprouvé de difficulté.
+			</li>
         </ol>
+			<fieldset>
+			<legend>Calculatrice</legend>
+			<table>
+			<tr>
+			<td id="nombre_1"></td>
+			<td id="operator"></td>
+			<td id="nombre_2"></td></tr>
+			<tr>
+			<td><button id="1" onclick="getNumber(document.getElementById('myid').innerText,1)">1</button></td>
+			<td><button id="2" onclick="getNumber(document.getElementById('myid').innerText,2)">2</button></td>
+			<td><button id="3" onclick="getNumber(document.getElementById('myid').innerText,3)">3</button></td>
+			</tr>
+			<tr> 
+			<td><button id="4" onclick="getNumber(document.getElementById('myid').innerText,4)">4</button></td>
+			<td><button id="5" onclick="getNumber(document.getElementById('myid').innerText,5)">5</button></td>
+			<td><button id="6" onclick="getNumber(document.getElementById('myid').innerText,6)">6</button></td>
+			</tr>
+			<tr> 
+			<td><button id="7" onclick="getNumber(document.getElementById('myid').innerText,7)">7</button></td>
+			<td><button id="8" onclick="getNumber(document.getElementById('myid').innerText,8)">8</button></td>
+			<td><button id="9" onclick="getNumber(document.getElementById('myid').innerText,9)">9</button></td>
+			</tr>
+			<tr> 
+			<td><button id="add" onclick="operation('+');">+</button></td>
+			<td><button id="0" onclick="getNumber(document.getElementById('myid').innerText,0)">0</button></td>
+			<td><button id="sub" onclick="operation('-');">-</button></td>
+			</tr>
+			<tr> 
+			<td><button id="mul" onclick="operation('*');">*</button></td>
+			<td><button id="eq" onclick="operation('=');">=</button></td>
+			<td><button id="div" onclick="operation('/');">/</button></td>
+			</tr>
+			</table>
+			<div id = "myid">nombre_1</div>
+			<p>Résultat
+			</p>
+			<p id = "result">
+			</p>
+			</fieldset>
+			<button onclick="initall();">Initialiser</button>
+			<br />
+			<script>
+				
+				function getNumber(n,i){
+					if (n=="nombre_1") {
+						document.getElementById("nombre_1").innerText = document.getElementById("nombre_1").innerText + i
+					}
+					else {
+						document.getElementById("nombre_2").innerText = document.getElementById("nombre_2").innerText + i
+					}
+				}
+
+				function operation(op){
+					document.getElementById("myid").innerText = "nombre_2";
+					switch (op){
+						case "+":
+								document.getElementById("operator").innerText = "+";
+								break;
+						case "-":
+								document.getElementById("operator").innerText = "-";
+								break;
+						case "*":
+								document.getElementById("operator").innerText = "*";
+								break;
+						case "/":
+								document.getElementById("operator").innerText = "/";
+								break;
+						case "=":
+								switch (document.getElementById("operator").innerText){
+									case "+":
+											document.getElementById("result").innerText=(parseInt(document.getElementById("nombre_1").innerText) + parseInt(document.getElementById("nombre_2").innerText));
+											break;
+									case "-":
+											document.getElementById("result").innerText=(parseInt(document.getElementById("nombre_1").innerText) - parseInt(document.getElementById("nombre_2").innerText));
+											break;
+									case "*":
+											document.getElementById("result").innerText=(parseInt(document.getElementById("nombre_1").innerText) * parseInt(document.getElementById("nombre_2").innerText));
+											break;
+									case "/":
+											document.getElementById("result").innerText=(parseInt(document.getElementById("nombre_1").innerText) / parseInt(document.getElementById("nombre_2").innerText));
+											break;
+								}
+						}
+				}
+				
+				function initall(){
+					document.getElementById("nombre_1").innerText="";
+					document.getElementById("nombre_2").innerText="";
+					document.getElementById("operator").innerText="";
+					document.getElementById("result").innerText="";
+					document.getElementById("myid").innerText="nombre_1";
+				}
+
+			</script>
+	<br />
     </article>
 </section>
 
